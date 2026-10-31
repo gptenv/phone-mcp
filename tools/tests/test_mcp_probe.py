@@ -66,12 +66,15 @@ class FakeHandler(http.server.BaseHTTPRequestHandler):
             results["initialize"]["serverInfo"]["name"] = "another-server"
         if self.server.mode == "duplicate-tool" and method == "tools/list":
             results["tools/list"]["tools"].append({"name": "phone_status"})
+        if self.server.mode == "paginated" and method == "tools/list":
+            results["tools/list"]["nextCursor"] = "more"
         if self.server.mode == "status-error" and method == "tools/call":
             results["tools/call"] = {"isError": True, "content": [{"text": MARKER}]}
         if method == "tools/call":
             self.server.arguments = message.get("params")
         result = {"jsonrpc": "2.0", "id": 999 if self.server.mode == "wrong-id" else message["id"], "result": results[method]}
-        return self.reply(200, json.dumps(result).encode())
+        extra = {"Mcp-Session-Id": "fixture-session"} if self.server.mode == "session" and method == "initialize" else None
+        return self.reply(200, json.dumps(result).encode(), extra)
 
     def reply(self, status, data, extra=None):
         self.send_response(status)
@@ -102,6 +105,52 @@ def server(mode="normal"):
 
 
 class ProbeTests(unittest.TestCase):
+    def test_session_header_rejected_without_socket_binding(self):
+        payload = json.dumps({"jsonrpc": "2.0", "id": 1, "result": {}}).encode()
+        response = (b"HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n"
+                    b"Mcp-Session-Id: fixture\r\nContent-Length: " + str(len(payload)).encode()
+                    + b"\r\n\r\n" + payload)
+        fake = mock.MagicMock()
+        fake.__enter__.return_value = fake
+        fake.recv.return_value = response
+        with mock.patch.object(probe.socket, "socket", return_value=fake), self.assertRaises(probe.ProbeError) as caught:
+            probe.request(12345, TOKEN, "initialize", 1)
+        self.assertIn("session", str(caught.exception).lower())
+
+    def test_pagination_rejected_without_socket_binding(self):
+        init = {"protocolVersion": probe.VERSION, "capabilities": {"tools": {}},
+                "serverInfo": {"name": "phone-mcp", "version": "test"}}
+        replies = [init, {}, {"tools": [{"name": "phone_status"}], "nextCursor": "more"}]
+        with mock.patch.object(probe, "request", side_effect=replies) as request, \
+                mock.patch.object(probe, "post"), self.assertRaises(probe.ProbeError) as caught:
+            probe.run_probe(12345, TOKEN)
+        self.assertIn("pagination", str(caught.exception).lower())
+        self.assertEqual(3, request.call_count)
+
+    def test_tty_stdin_rejected_before_read(self):
+        fake = mock.Mock()
+        fake.isatty.return_value = True
+        fake.readline.side_effect = AssertionError("must not read a terminal")
+        err = io.StringIO()
+        with mock.patch.object(probe.sys, "stdin", fake), contextlib.redirect_stderr(err):
+            self.assertEqual(1, probe.main(["--token-stdin"]))
+        fake.readline.assert_not_called()
+        self.assertIn("CONFIGURATION", err.getvalue())
+
+    def test_session_header_is_explicitly_unsupported(self):
+        with server("session") as s, self.assertRaises(probe.ProbeError) as caught:
+            probe.run_probe(s.server_port, TOKEN)
+        self.assertEqual("protocol", caught.exception.category)
+        self.assertIn("session", str(caught.exception).lower())
+        self.assertEqual(["initialize"], s.methods)
+
+    def test_paginated_tools_are_explicitly_unsupported(self):
+        with server("paginated") as s, self.assertRaises(probe.ProbeError) as caught:
+            probe.run_probe(s.server_port, TOKEN)
+        self.assertEqual("protocol", caught.exception.category)
+        self.assertIn("pagination", str(caught.exception).lower())
+        self.assertNotIn("tools/call", s.methods)
+
     def test_read_only_sequence_and_status(self):
         with server() as s:
             self.assertEqual((False, True), probe.run_probe(s.server_port, TOKEN))

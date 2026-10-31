@@ -89,6 +89,8 @@ def post(port, token, message):
                 if key in response_headers:
                     raise ProbeError("protocol", "Ambiguous HTTP headers")
                 response_headers[key] = value.strip()
+            if b"mcp-session-id" in response_headers:
+                raise ProbeError("protocol", "Session-based servers are not supported by this probe")
             if b"transfer-encoding" in response_headers:
                 raise ProbeError("protocol", "Unsupported response framing")
             raw_length = response_headers.get(b"content-length", b"")
@@ -145,7 +147,10 @@ def run_probe(port, token):
         raise ProbeError("protocol", "Server did not negotiate the expected protocol and tools capability")
     post(port, token, {"jsonrpc": "2.0", "method": "notifications/initialized"})
     request(port, token, "ping", 2)
-    listed = request(port, token, "tools/list", 3).get("tools")
+    listing = request(port, token, "tools/list", 3)
+    if "nextCursor" in listing:
+        raise ProbeError("protocol", "tools/list pagination is not supported by this probe")
+    listed = listing.get("tools")
     if not isinstance(listed, list) or sum(isinstance(item, dict) and item.get("name") == "phone_status" for item in listed) != 1:
         raise ProbeError("protocol", "phone_status is missing or duplicated in tools/list")
     result = request(port, token, "tools/call", 4, {"name": "phone_status", "arguments": {}})
@@ -174,6 +179,8 @@ def main(argv=None):
         parser.error("port must be between 1 and 65535")
     try:
         if args.token_stdin:
+            if sys.stdin.isatty():
+                raise ProbeError("configuration", "--token-stdin requires redirected input; omit it for hidden terminal entry")
             token = sys.stdin.readline(138).rstrip("\r\n")
         else:
             with warnings.catch_warnings():

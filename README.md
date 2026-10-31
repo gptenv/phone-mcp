@@ -4,6 +4,10 @@ An opt-in Android app that exposes a **limited set of visible-phone interactions
 
 **Status:** developer prototype, not a store release. Intended eventual paid download: $5 (currency and store pricing not configured). Package: `dev.phonemcp.android`; minimum Android 8 / API 26; targets API 35. Samsung S25 Ultra is an intended test device, not yet device-certified.
 
+## Verification status (blunt)
+
+**Passed (reported cloud build, see review-material/CHECKPOINT.md):** 24 core JVM tests, 86 Android host tests, debug/test APK assembly, lint with 0 errors. There is no CI configured in this repository yet. **Not yet passed:** device acceptance. Fixture screen actions, API 36 labels, Stop/Start lifecycle and Samsung S25 qualification have no passing device evidence. **Not yet run at all:** AcceptHeaderTest and AcceptHeaderRegressionTest (added after that build), and limiter/Unicode/Accept integration. Treat anything not listed as passed as unverified.
+
 ## Build
 
 Install JDK 17 or 21 and Android SDK platform 36/build-tools 35.0.0. Set `ANDROID_HOME` or add `sdk.dir=/absolute/sdk/path` to local.properties (not committed).
