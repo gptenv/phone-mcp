@@ -4,16 +4,12 @@ An opt-in Android app that exposes a **limited set of visible-phone interactions
 
 **Status:** developer prototype, not a store release. Intended eventual paid download: $5 (currency and store pricing not configured). Package: `dev.phonemcp.android`; minimum Android 8 / API 26; targets API 35. Samsung S25 Ultra is an intended test device, not yet device-certified.
 
-## Verification status (blunt)
-
-**Passed (reported cloud build, see review-material/CHECKPOINT.md):** 24 core JVM tests, 86 Android host tests, debug/test APK assembly, lint with 0 errors. There is no CI configured in this repository yet. **Not yet passed:** device acceptance. Fixture screen actions, API 36 labels, Stop/Start lifecycle and Samsung S25 qualification have no passing device evidence. **Not yet run at all:** AcceptHeaderTest and AcceptHeaderRegressionTest (added after that build), and limiter/Unicode/Accept integration. Treat anything not listed as passed as unverified.
-
 ## Build
 
 Install JDK 17 or 21 and Android SDK platform 36/build-tools 35.0.0. Set `ANDROID_HOME` or add `sdk.dir=/absolute/sdk/path` to local.properties (not committed).
 
 ```sh
-./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
+./gradlew :core:test :app:testDebugUnitTest :fixture:assembleDebug :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
 # APK: app/build/outputs/apk/debug/app-debug.apk
 ```
 
@@ -31,7 +27,8 @@ No endpoint is reachable over Wi-Fi: it binds only to `127.0.0.1:8765`. For a tr
 
 ```bash
 adb forward tcp:8765 tcp:8765
-# Bash: enter the token privately; do not paste it into a command or commit it.
+# Bash: paste the raw token OR the displayed single Bearer prefix privately.
+# Do not put it in a command or commit it.
 read -r -s -p 'Session token: ' PHONE_MCP_TOKEN; printf '\n'
 export PHONE_MCP_TOKEN
 python3 scripts/mcp_smoke.py
@@ -56,14 +53,14 @@ Remove the development forwarding when done: `adb forward --remove tcp:8765`; `u
 | `screen_inspect` | `screen.read` | bounded accessibility tree of visible screen |
 | `node_click` | `screen.read` + `screen.act` | click an eligible node from a recent snapshot |
 | `node_scroll` | `screen.read` + `screen.act` | one forward/backward scroll on a fresh eligible node |
-| `node_set_text` | `screen.read` + `screen.act` | set/clear up to 1,000 UTF-16 units in an eligible ordinary text field, never submit |
+| `node_set_text` | `screen.read` + `screen.act` | set/clear up to 1,000 Unicode code points in an eligible ordinary text field, never submit |
 | `global_action` | `screen.act` | back, home, or recents |
 
 Android may withhold or incompletely describe UI. This is **not unrestricted phone control**. No credential entry or collection, clipboard reading, screenshots, shell, app installation, contacts, SMS, microphones, cameras, files, background usage history, payment tool, or permission granting. Known security-sensitive/system/settings/own-app screens are blocked, password/accessibility-sensitive fields are omitted; eligible ordinary editable fields expose metadata and action handles but never their values, stale node handles are rejected, and phone actions are disabled while locked. Redaction is best-effort: custom or incorrectly labelled controls, ordinary text, and unrecognized apps can expose secrets or personal data. It is not a guarantee that every credential or sensitive screen will be recognized. Actions can still have consequences in ordinary apps: use only a trusted client and carefully chosen scopes.
 
 ## Protocol
 
-Minimal stateless MCP Streamable HTTP, JSON replies, protocol versions 2025-03-26 and 2025-06-18. No SSE stream, subscriptions, resources, prompts, OAuth server, or session persistence. Browser-origin requests are rejected; no CORS. This first slice intentionally supports native/local clients with bearer-token configuration, not direct ChatGPT connectivity.
+Minimal protocol-sessionless, rate-stateful MCP Streamable HTTP, JSON replies, protocol versions 2025-03-26 and 2025-06-18. No SSE stream, subscriptions, resources, prompts, OAuth server, or session persistence. Browser-origin requests are rejected; no CORS. This first slice intentionally supports native/local clients with bearer-token configuration, not direct ChatGPT connectivity.
 
 Read [security boundaries](docs/SECURITY.md) and [device acceptance checklist](docs/DEVICE_TEST_PLAN.md) before use. No Play eligibility is claimed; Accessibility API and special-use foreground service declarations need policy review before a paid release.
 
@@ -76,3 +73,30 @@ Read [security boundaries](docs/SECURITY.md) and [device acceptance checklist](d
 Legacy `2025-03-26` batches support up to 32 messages with **at most one `tools/call`**; batches with more are rejected atomically with HTTP 400 before any tool executes. `2025-06-18` uses single messages. Unsolicited JSON-RPC responses are rejected with HTTP 400 because the server issues no client requests. Input has a five-second deadline from socket acceptance; stalled response writes have a separate five-second close watchdog. These are not overall operation or availability guarantees.
 
 Serialized tool text is capped at 512 KiB; complete responses at 2 MiB. Serialization also limits depth and value count. `RESULT_TOO_LARGE` is a tool error **after possible controller execution**, not permission to retry a click. Inspect state first when an action outcome is uncertain. See `docs/SECURITY.md` for limits and the local server-identity threat model.
+
+## Validation and license
+
+Local JVM validation: 78 core tests and 86 Android host/framework tests passed. Python checks:
+14 read-only probe tests, four token/smoke tests, and 11 SDK-client tests passed.
+Debug app, test, and fixture APKs assembled; lint has zero errors and one
+intentional old-target warning. These are not physical-device certification.
+The repaired standalone accessibility fixture and the latest combined build
+still require complete emulator/API 36 and physical-device acceptance.
+
+```sh
+python3 -m unittest discover -s tools/tests -v
+python3 -m unittest discover -s scripts/tests -v
+# Optional SDK interoperability dependencies and tests:
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -r scripts/interop/requirements-lock.txt
+python3 -m unittest discover -s scripts/interop -p 'test_*.py' -v
+```
+
+The [manual CI draft](docs/CI_VALIDATION.md) has not been run. It has no push
+or pull-request triggers; execution and billing controls require explicit
+owner review. See [release readiness](docs/RELEASE_READINESS.md).
+
+Original project source: [MIT](LICENSE), copyright 2026 Jeremy Carter.
+[Third-party notices](THIRD_PARTY_NOTICES.md) retain the Gradle wrapper's
+separate Apache 2.0 license.

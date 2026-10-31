@@ -160,8 +160,8 @@ public class McpTest {
         JSONObject hidden=throwing.dispatch(request("tools/call").put("params",new JSONObject().put("name","node_set_text").put("arguments",new JSONObject().put("nodeId","1:1").put("text",marker))));
         assertTrue(hidden.getJSONObject("result").getBoolean("isError")); assertFalse(hidden.toString().contains(marker));
     }
-    @Test public void textLimitCountsUtf16UnitsAndNewSchemasAreClosed() {
-        StringBuilder astral = new StringBuilder(); for(int i=0;i<500;i++) astral.append("😀");
+    @Test public void textLimitCountsUnicodeCodePointsAndNewSchemasAreClosed() {
+        StringBuilder astral = new StringBuilder(); for(int i=0;i<1000;i++) astral.append("😀");
         JSONObject args=new JSONObject().put("nodeId","1:1").put("text",astral.toString());
         assertTrue(McpDispatcher.validArgs("node_set_text",args));
         assertFalse(McpDispatcher.validArgs("node_set_text",args.put("text",astral+"x")));

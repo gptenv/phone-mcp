@@ -6,11 +6,15 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Arrays;
 
-/** Stateless JSON-RPC dispatcher. Transport owns authentication; controller owns authorization. */
+/** Protocol-sessionless JSON-RPC dispatcher with per-endpoint rate-admission state. Transport owns authentication; controller owns authorization. */
 public final class McpDispatcher {
     private final Controller controller;
+    private final SessionRateLimiter rateLimiter;
     private static final Set<String> NAMES = new HashSet<>(Arrays.asList("phone_status", "screen_inspect", "node_click", "global_action", "node_scroll", "node_set_text"));
-    public McpDispatcher(Controller controller) { this.controller = controller; }
+    public McpDispatcher(Controller controller) { this(controller, SessionRateLimiter.withDefaults(System::nanoTime)); }
+    McpDispatcher(Controller controller, SessionRateLimiter rateLimiter) {
+        this.controller = controller; this.rateLimiter = java.util.Objects.requireNonNull(rateLimiter);
+    }
     public static boolean supports(String version) { return "2025-06-18".equals(version) || "2025-03-26".equals(version); }
     public JSONObject dispatch(JSONObject request) {
         Object id = request.opt("id");
@@ -41,6 +45,16 @@ public final class McpDispatcher {
                 if (args == null) args = new JSONObject();
                 String name = (String) rawName;
                 if (!validArgs(name, args)) return error(id, -32602, "Invalid tool arguments");
+                // Transport has authenticated; side-effect-free validation is complete.
+                // Each valid tools/call (including status and later permission denials) shares this session bucket.
+                SessionRateLimiter.Decision admission = rateLimiter.tryAcquire(1);
+                if (!admission.accepted()) {
+                    long nanos = admission.retryAfterNanos();
+                    long millis = nanos / 1_000_000L + (nanos % 1_000_000L == 0 ? 0 : 1);
+                    return result(id, toolResult(new JSONObject().put("error", "RATE_LIMITED")
+                        .put("executed", false).put("retryAfterMs", millis)
+                        .put("message", "This request did not execute. Wait at least retryAfterMs before retrying; eligibility is checked again."), true));
+                }
                 try {
                     JSONObject value = controller.execute(name, args);
                     return result(id, toolResult(value, value.has("error")));
@@ -58,7 +72,7 @@ public final class McpDispatcher {
             case "node_scroll": return a.length() == 2 && validNodeId(a) && a.opt("direction") instanceof String
                 && Arrays.asList("forward", "backward").contains(a.optString("direction"));
             case "node_set_text": return a.length() == 2 && validNodeId(a) && a.opt("text") instanceof String
-                && a.optString("text").length() <= 1000; // Java String.length counts UTF-16 code units; empty clears.
+                && TextInputPolicy.accepts(a.optString("text")); // Shared Unicode-code-point policy; empty clears.
             case "global_action": return a.length() == 1 && a.opt("action") instanceof String && Arrays.asList("back", "home", "recents").contains(a.optString("action"));
             default: return false;
         }
@@ -93,8 +107,8 @@ public final class McpDispatcher {
             .put(tool("node_scroll", "Scroll a fresh inspected scrollable node forward or backward. Requires screen.read and screen.act, unlocked device and current nodeId. No coordinates. Password/credential/data-sensitive controls are blocked; custom mislabelling can evade detection.",
                 new JSONObject().put("nodeId", nodeIdSchema()).put("direction", new JSONObject().put("type", "string").put("enum", new JSONArray().put("forward").put("backward"))),
                 new JSONArray().put("nodeId").put("direction"), false))
-            .put(tool("node_set_text", "Replace text only in a fresh inspected eligible non-sensitive editable field. Requires screen.read and screen.act and unlocked device. Password/credential/data-sensitive controls are blocked; custom mislabelling can evade detection. At most 1000 UTF-16 code units; empty text clears. No submit action, payload echo or logging; the target app may react to text changes.",
-                new JSONObject().put("nodeId", nodeIdSchema()).put("text", new JSONObject().put("type", "string").put("maxLength", 1000).put("description", "Non-sensitive replacement text; maximum 1000 UTF-16 code units, including surrogate pairs as two units. Empty string clears the field.")),
+            .put(tool("node_set_text", "Replace text only in a fresh inspected eligible non-sensitive editable field. Requires screen.read and screen.act and unlocked device. Password/credential/data-sensitive controls are blocked; custom mislabelling can evade detection. At most 1000 Unicode code points with no unpaired surrogates; empty text clears. No submit action, payload echo or logging; the target app may react to text changes.",
+                new JSONObject().put("nodeId", nodeIdSchema()).put("text", new JSONObject().put("type", "string").put("maxLength", 1000).put("description", "Non-sensitive replacement text; maximum 1000 Unicode code points. A valid surrogate pair counts as one point; unpaired surrogates are rejected. Empty string clears the field.")),
                 new JSONArray().put("nodeId").put("text"), false))
             .put(tool("global_action", "Navigate back, home or recents. Requires screen.act and unlocked device.", new JSONObject().put("action", new JSONObject().put("type", "string").put("enum", new JSONArray().put("back").put("home").put("recents"))), new JSONArray().put("action"), false));
     }

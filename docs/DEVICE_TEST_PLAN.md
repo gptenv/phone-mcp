@@ -32,7 +32,7 @@ Run on a personally owned Samsung S25 Ultra and an API 26 device/emulator before
 
 ## Six-tool and modern-label release gates
 
-- Ordinary editable notes: inspect returns a fresh handle and metadata, never its value; set and clear work without focus/submit/clipboard. Reject password/credential hints, IDs, linked labels, input types, protected screens, stale/wrong-node handles and payloads over1,000 UTF-16 units. No payload echo in responses/errors/logs.
+- Ordinary editable notes: inspect returns a fresh handle and metadata, never its value; set and clear work without focus/submit/clipboard. Reject password/credential hints, IDs, linked labels, input types, protected screens, stale/wrong-node handles and payloads over1,000 Unicode code points. No payload echo in responses/errors/logs.
 - Recycled editable identity: change hint/description or external label while keeping class/bounds; old handle must fail. Do not assume stable field identity merely because value changes are intentionally not hashed.
 - Android36+: a harmless first accessibility label plus credential-bearing second label must deny editing. Run the dedicated API36 fixture; an API35 skip is not success.
 - Scroll one step forward/back with a fresh handle, reject wrong direction/type, read-only scope and stale handle; verify actual UI movement.

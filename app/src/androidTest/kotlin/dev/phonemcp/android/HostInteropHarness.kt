@@ -11,6 +11,12 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import java.io.File
 import java.io.FileInputStream
+import java.io.IOException
+import java.net.Socket
+import java.net.InetSocketAddress
+import android.system.ErrnoException
+import android.system.OsConstants
+import org.json.JSONObject
 
 /** Opt-in dedicated-emulator bridge for a real host MCP SDK; no production hooks. */
 @RunWith(AndroidJUnit4::class)
@@ -22,8 +28,8 @@ class HostInteropHarness {
         val context = instrumentation.targetContext
         val files = listOf("interop-token", "interop-stop", "interop-stopped", "interop-restart", "interop-restarted", "interop-finish")
         fun file(name: String) = File(context.filesDir,name)
-        fun await(label: String, predicate: () -> Boolean) {
-            val end = System.nanoTime() + 180_000_000_000L
+        fun await(label: String, timeoutMillis: Long = 180_000, predicate: () -> Boolean) {
+            val end = System.nanoTime() + timeoutMillis * 1_000_000L
             while (!predicate() && System.nanoTime() < end) Thread.sleep(100)
             assertTrue("Host coordination timed out: $label",predicate())
         }
@@ -44,11 +50,16 @@ class HostInteropHarness {
                 val first = PhoneBridge.token
                 await("stop requested") { file("interop-stop").exists() }
                 scenario.onActivity { PhoneBridge.revokeSession(); it.stopService(Intent(it,McpService::class.java)) }
-                await("stopped") { !PhoneBridge.active }
-                file("interop-stopped").writeText("stopped")
+                await("processed revocation", 10_000) { !PhoneBridge.active && PhoneBridge.token == null }
+                // A host adb-forward EOF is not proof of device-side listener closure.
+                await("device-local ECONNREFUSED", 10_000) { deviceListenerRefusesConnection() }
+                file("interop-stopped").writeText(JSONObject()
+                    .put("revocation_processed", true).put("active", false).put("token_present", false)
+                    .put("listener_closed", true).put("connection_error", "ECONNREFUSED")
+                    .put("device_api", Build.VERSION.SDK_INT).toString())
                 await("restart requested") { file("interop-restart").exists() }
                 start()
-                assertNotEquals(first,PhoneBridge.token)
+                assertTrue("Restart must rotate the token", first != PhoneBridge.token)
                 file("interop-restarted").writeText("restarted")
                 await("host finished") { file("interop-finish").exists() }
             }
@@ -57,4 +68,19 @@ class HostInteropHarness {
             files.forEach { file(it).delete() }
         }
     }
+    private fun deviceListenerRefusesConnection(): Boolean {
+        try {
+            Socket().use { it.connect(InetSocketAddress("127.0.0.1", 8765), 250) }
+            return false // A listener accepted the connection: no closure proof.
+        } catch (error: IOException) {
+            var cause: Throwable? = error
+            repeat(8) {
+                val current = cause ?: return false
+                if (current is ErrnoException && current.errno == OsConstants.ECONNREFUSED) return true
+                cause = current.cause
+            }
+            return false // Timeout/reset/unclassified error must never certify closure.
+        }
+    }
+
 }

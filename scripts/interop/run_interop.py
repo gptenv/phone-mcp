@@ -82,6 +82,9 @@ async def scenario(mode, token, nonce):
 async def run_all(token, nonce):
     results = []
     for mode in ("auto", "legacy", "2025-06-18", "2025-03-26"):
+        # One shared fixture session: four valid calls/scenario must respect its 5/s refill.
+        # Rate admission itself is verified with deterministic fake clocks in core integration tests.
+        if results: await asyncio.sleep(1.0)
         results.append(await scenario(mode, token, nonce))
     return results
 
@@ -108,7 +111,7 @@ def main():
             assert ready and server.stdout.readline().decode().strip() == "READY host-only-fake-controller", "Fixture startup failed (port 8765 must be free)"
             results = asyncio.run(run_all(token, nonce))
             report = {"timestamp_utc": datetime.now(timezone.utc).isoformat(), "sdk": "mcp", "sdk_version": SDK_VERSION,
-                      "controller": "host-only-fake; no Android/device", "result": "PASS", "scenarios": results}
+                      "controller": "host-only-fake; no Android/device", "scenario_spacing_seconds": 1.0, "result": "PASS", "scenarios": results}
             args.output.parent.mkdir(parents=True, exist_ok=True)
             args.output.write_text(json.dumps(report, indent=2) + "\n")
             print(json.dumps(report, indent=2))

@@ -53,8 +53,12 @@ public final class LoopbackMcpServer implements AutoCloseable {
     }
     // Injectable only within this package, to prove setup-failure cleanup without OS-dependent faults.
     LoopbackMcpServer(Controller controller, String token, int port, Runnable onUnexpectedFailure, SocketConfiguration socketConfiguration) {
+        this(controller, token, port, onUnexpectedFailure, socketConfiguration, SessionRateLimiter.withDefaults(System::nanoTime));
+    }
+    // Fake-clock bucket injection for integration tests; production always creates a fresh per-server bucket.
+    LoopbackMcpServer(Controller controller, String token, int port, Runnable onUnexpectedFailure, SocketConfiguration socketConfiguration, SessionRateLimiter rateLimiter) {
         if (token == null || !token.matches("[A-Za-z0-9_-]{43,128}")) throw new IllegalArgumentException("Strong base64url token required");
-        this.dispatcher = new McpDispatcher(controller);
+        this.dispatcher = new McpDispatcher(controller, rateLimiter);
         this.authorization = ("Bearer " + token).getBytes(StandardCharsets.US_ASCII);
         this.port = port;
         this.onUnexpectedFailure = Objects.requireNonNull(onUnexpectedFailure);
@@ -126,8 +130,8 @@ public final class LoopbackMcpServer implements AutoCloseable {
                 if (!McpDispatcher.supports(version)) throw new HttpError(400);
                 String contentType = headers.getOrDefault("content-type", "").toLowerCase(Locale.ROOT);
                 if (!contentType.split(";", 2)[0].trim().equals("application/json")) throw new HttpError(415);
-                String accept = headers.getOrDefault("accept", "").toLowerCase(Locale.ROOT);
-                if (!accept.contains("application/json") || !accept.contains("text/event-stream")) throw new HttpError(406);
+                String accept = headers.getOrDefault("accept", "");
+                if (!AcceptHeader.acceptsMcp(accept)) throw new HttpError(406);
                 String length = headers.get("content-length");
                 if (length == null || !length.matches("[0-9]{1,8}")) throw new HttpError(411);
                 int size = Integer.parseInt(length);

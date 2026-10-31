@@ -1,0 +1,369 @@
+{
+  "files": [
+    {
+      "path": ".github/workflows/android-emulator-review.yml",
+      "bytes": 4676,
+      "sha256": "06cd52ddc82031f020b969fc0b66659447ad3dbbb4d4c3784833df93ca31af37"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 233,
+      "sha256": "2ec66ec0bfcc8d118e11325c95a28d9b65f57cc1eaad480c5e14b98eadc94313"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1070,
+      "sha256": "6664fc812841d6d2f3ff737265aac53fafe9a96928b198ab5c931359b4505e89"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8635,
+      "sha256": "3331e1ebc8dba8cfd7f3b7ec93efd2edf4d8db4e6cab240e89e70cf76970f4e0"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 780,
+      "sha256": "13d903dcf5ba02d1d6862701b616a00c5e7a7248442130fd7c628b016d2f5368"
+    },
+    {
+      "path": "app/build.gradle.kts",
+      "bytes": 1628,
+      "sha256": "dfcdfacce77d6b941d69ed3813eaf96ce06f7000dd44ef609b719cd8a63fd0dd"
+    },
+    {
+      "path": "app/src/androidTest/AndroidManifest.xml",
+      "bytes": 235,
+      "sha256": "9f1da62434bf7fab599bb0b7160fb40877c7a8d73a419b46a7c3725343190714"
+    },
+    {
+      "path": "app/src/androidTest/kotlin/dev/phonemcp/android/DeviceAccessibilityTest.kt",
+      "bytes": 19041,
+      "sha256": "34839d238340da7695152bc5a36edee0678fa3341a3030a7db38f4111c5e26e8"
+    },
+    {
+      "path": "app/src/androidTest/kotlin/dev/phonemcp/android/DeviceSessionTest.kt",
+      "bytes": 5713,
+      "sha256": "fa8021f82d05b7b5cb30746794bb594e407bb87a934586eb8295bbeacafd6d37"
+    },
+    {
+      "path": "app/src/androidTest/kotlin/dev/phonemcp/android/HostInteropHarness.kt",
+      "bytes": 4594,
+      "sha256": "012aabffd83f33369f7915e644171449e7087268d2e1334a33d18c2bd5ef86d6"
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "bytes": 1858,
+      "sha256": "469b33b12479bca425f5482d2dbb7cff2ef9f45aa98512fa2a745f5b6fa9c249"
+    },
+    {
+      "path": "app/src/main/kotlin/dev/phonemcp/android/MainActivity.kt",
+      "bytes": 14072,
+      "sha256": "9b80a1fe0866a05a8b55a617cb102b912564dee3a0e8c64a318ace3127f05bce"
+    },
+    {
+      "path": "app/src/main/kotlin/dev/phonemcp/android/McpService.kt",
+      "bytes": 5336,
+      "sha256": "5ac6ac448c6474fdfef004c2bc9edaf8fe7313d1f4cfbf0a8ec74abf574adc42"
+    },
+    {
+      "path": "app/src/main/kotlin/dev/phonemcp/android/PhoneAccessibilityService.kt",
+      "bytes": 24976,
+      "sha256": "296a032f3860407b55082084873d9c4f3596669fe81359be9a9435748a1f1955"
+    },
+    {
+      "path": "app/src/main/kotlin/dev/phonemcp/android/SessionVisibility.kt",
+      "bytes": 807,
+      "sha256": "712d09681b4691539cb33b6c8a40dba3d7274f628eff8ca7eb26e17ff82f8298"
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_phone_mcp.xml",
+      "bytes": 510,
+      "sha256": "402f8c33b51dbf6d4229d54183004baf11a59287c2245fa2ea30c36e786a7c47"
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "bytes": 4627,
+      "sha256": "125b6e69aa27825700ea49efcb3370574cc2fb8f69f8a9779578709dc25a9232"
+    },
+    {
+      "path": "app/src/main/res/xml/accessibility_service.xml",
+      "bytes": 522,
+      "sha256": "e1c6c38e35f8323fa495b9882e9fe395053809004b604fe6fabc92dbdc5e9ba2"
+    },
+    {
+      "path": "app/src/main/res/xml/data_extraction_rules.xml",
+      "bytes": 491,
+      "sha256": "35158492b05f5d8831f6148b1a91a13da23d5aad2b15e4fbf611cd31fe0ecfea"
+    },
+    {
+      "path": "app/src/main/res/xml-v31/accessibility_service.xml",
+      "bytes": 511,
+      "sha256": "ae9830b8f419fb1c6b2c0f73db66da1f4ae3e2fe7457acdc9a82d511bea081f0"
+    },
+    {
+      "path": "app/src/test/kotlin/dev/phonemcp/android/EditableFingerprintTest.kt",
+      "bytes": 2304,
+      "sha256": "8074fb2723af5bf2e1a155cb11cb85ab95f368d610e518f2f63325169e6c276a"
+    },
+    {
+      "path": "app/src/test/kotlin/dev/phonemcp/android/EditablePolicyTest.kt",
+      "bytes": 3231,
+      "sha256": "4d165ae2ef09b0a7bb0381adfc466507f4cf1f9333ba8e3ec9bbb40b7e4be14d"
+    },
+    {
+      "path": "app/src/test/kotlin/dev/phonemcp/android/SessionSecurityTest.kt",
+      "bytes": 9252,
+      "sha256": "849ab0dd07acd27ceedec2902f245ce28f4125a9e0fbcf4fef656078233415b8"
+    },
+    {
+      "path": "app/src/test/kotlin/dev/phonemcp/android/UiSecurityTest.kt",
+      "bytes": 11770,
+      "sha256": "ae09a75d380c973d617ac64a41d32cef383358222c522134198f85ed87712268"
+    },
+    {
+      "path": "build.gradle.kts",
+      "bytes": 142,
+      "sha256": "d9912c44984c59df07a01441442456af0cbeb25c90cb5cf407bda62162409590"
+    },
+    {
+      "path": "core/build.gradle.kts",
+      "bytes": 403,
+      "sha256": "e46f7aec13b5eb34b29aeaa22c2610906cf3865b31d246245e39a3dd00dcff11"
+    },
+    {
+      "path": "core/src/main/java/dev/phonemcp/core/AcceptHeader.java",
+      "bytes": 8277,
+      "sha256": "957f8fdd0171b392f8c6b5d086fbfbfe659cf86a429a5bc8492f9139aa847e92"
+    },
+    {
+      "path": "core/src/main/java/dev/phonemcp/core/BoundedJson.java",
+      "bytes": 3467,
+      "sha256": "8e943602d90b82083cfa8798c433389a18e58b747f32dbc8433941ca10af6595"
+    },
+    {
+      "path": "core/src/main/java/dev/phonemcp/core/Controller.java",
+      "bytes": 247,
+      "sha256": "a5d3cdc95b888aaa8e7c95021851b33759bfd595ba1323e75fe7b86acf5b1489"
+    },
+    {
+      "path": "core/src/main/java/dev/phonemcp/core/LoopbackMcpServer.java",
+      "bytes": 16149,
+      "sha256": "df1efef7cb132949d8977679eb31090989f2d690b46a7e5aea6e8ce1aa9496bb"
+    },
+    {
+      "path": "core/src/main/java/dev/phonemcp/core/McpDispatcher.java",
+      "bytes": 10250,
+      "sha256": "9a53a3113669306234e2d63b29a814fdeb77fc483ef9c32b8d7f8efadb8a1f1a"
+    },
+    {
+      "path": "core/src/main/java/dev/phonemcp/core/SessionRateLimiter.java",
+      "bytes": 6832,
+      "sha256": "4a74b6c4a9602df57002b6094c4c82e560c9dc636ce5fd620296455295d41dce"
+    },
+    {
+      "path": "core/src/main/java/dev/phonemcp/core/StrictJson.java",
+      "bytes": 3325,
+      "sha256": "7eec985b36ce661af951375d080b97915a456ddcec98a6f466a4995071f03c4f"
+    },
+    {
+      "path": "core/src/main/java/dev/phonemcp/core/TextInputPolicy.java",
+      "bytes": 939,
+      "sha256": "aab938e13ae094b9674d3b4f2107f91f75ec2df6adfc29d31612218b0ab29606"
+    },
+    {
+      "path": "core/src/test/java/dev/phonemcp/core/AcceptHeaderRegressionTest.java",
+      "bytes": 3239,
+      "sha256": "46d659e70cc3e43c533f63057295b0badeb367d49babe2f8ecc1a63aa1abc6df"
+    },
+    {
+      "path": "core/src/test/java/dev/phonemcp/core/AcceptHeaderTest.java",
+      "bytes": 8644,
+      "sha256": "7f280f505eb9073780713e1ea4f674642f2aa2f0d4e6a9d35ed407cced7ad704"
+    },
+    {
+      "path": "core/src/test/java/dev/phonemcp/core/AcceptReviewRegressionTest.java",
+      "bytes": 458,
+      "sha256": "796c00f0be70f1df4800c6d09ffd5cc5986f5c22772af6db491dd524093a65cd"
+    },
+    {
+      "path": "core/src/test/java/dev/phonemcp/core/AcceptTransportTest.java",
+      "bytes": 1979,
+      "sha256": "cb016efe986f80a16a4c573328ee405fe6e012040c0c248f9e5013a517f35e6a"
+    },
+    {
+      "path": "core/src/test/java/dev/phonemcp/core/McpTest.java",
+      "bytes": 30520,
+      "sha256": "23cd025f57bf19cd4a2aaad09be41204ab42959b50803592b552be2591d52040"
+    },
+    {
+      "path": "core/src/test/java/dev/phonemcp/core/RateLimitIntegrationTest.java",
+      "bytes": 7770,
+      "sha256": "f30c4b0b86878744e75b7d2ad702f2f3dba5c5cb14b9210ef7fb89a95f7570af"
+    },
+    {
+      "path": "core/src/test/java/dev/phonemcp/core/SessionRateLimiterTest.java",
+      "bytes": 10755,
+      "sha256": "7f49380af4f082b3d147808db213e36a95c59708a2bd340a8023b5d6f2590d81"
+    },
+    {
+      "path": "core/src/test/java/dev/phonemcp/core/TextInputPolicyTest.java",
+      "bytes": 3088,
+      "sha256": "a656a4c0e8cf156def49658cbc9daab6182723bc66fbbb3ee56e93a036761c58"
+    },
+    {
+      "path": "docs/CI_VALIDATION.md",
+      "bytes": 11042,
+      "sha256": "74c849fd9af76e10f49a092277bf0ce0b97db7d21fededced950059552547689"
+    },
+    {
+      "path": "docs/DEVICE_TEST_PLAN.md",
+      "bytes": 6914,
+      "sha256": "3303c5d841aeb7721cf38ab6a8e49389b1bda404e6142fb9d0a2446ce478550b"
+    },
+    {
+      "path": "docs/INTEROPERABILITY.md",
+      "bytes": 8964,
+      "sha256": "b068a36a9998549227e3095d1e20c77636a4220cb23c9a3d279d1c8580735156"
+    },
+    {
+      "path": "docs/MCP_PROBE.md",
+      "bytes": 1970,
+      "sha256": "977d95eb643be3739cd4da9262db132b96bda9e674f9841f70cd722912aafb12"
+    },
+    {
+      "path": "docs/RELEASE_READINESS.md",
+      "bytes": 1950,
+      "sha256": "afa845968a74116615de32dd776db5fde6c02da2822e2822fc68f45906d17d8b"
+    },
+    {
+      "path": "docs/REQUEST_LIMITS.md",
+      "bytes": 2909,
+      "sha256": "7d0ceeaa67afde4a223ab0a223435527d858db3b42f9282c8a4b385dcf35b7ea"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "bytes": 7694,
+      "sha256": "65a8d3c3ccb179256985c51fdb73cea54f7c879842ec2ab7727de0f8920e6cb7"
+    },
+    {
+      "path": "fixture/build.gradle.kts",
+      "bytes": 664,
+      "sha256": "783e24c4f285748637679a20b23dabd27aede9c2c4e360df194d1bce22a60f48"
+    },
+    {
+      "path": "fixture/src/main/AndroidManifest.xml",
+      "bytes": 530,
+      "sha256": "747f8593f85e813e664bd579a5a5574f6344210821d1cafb25fc03319c9186e0"
+    },
+    {
+      "path": "fixture/src/main/kotlin/dev/phonemcp/fixture/FixtureActivity.kt",
+      "bytes": 5169,
+      "sha256": "6900c4372386e635efb58fa82ab4be9260f436b25304e64133ad85f17511d0f7"
+    },
+    {
+      "path": "fixture/src/main/res/values/strings.xml",
+      "bytes": 125,
+      "sha256": "838e934576f640fdd0f9f8c7dc2f1742ed95a580375126f90fae5d8b1a9aba9f"
+    },
+    {
+      "path": "gradle/wrapper/LICENSE",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 43583,
+      "sha256": "2db75c40782f5e8ba1fc278a5574bab070adccb2d21ca5a6e5ed840888448046"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 340,
+      "sha256": "3256e6a4bacbb04787b346d74b418734b03246092a15703cf2acd926c4b00e90"
+    },
+    {
+      "path": "gradle.properties",
+      "bytes": 128,
+      "sha256": "861f3fe031524ed298949bf91dd5c7ff5fbdd047442ca9be5b11c4e91401a990"
+    },
+    {
+      "path": "gradlew",
+      "bytes": 8762,
+      "sha256": "a3648413b47ef77af21d5ebc36c687c7d103aaef3e17f33de7d4f080a6f300a3"
+    },
+    {
+      "path": "gradlew.bat",
+      "bytes": 2966,
+      "sha256": "57931b17dd228e5c24dac90e815d0bf82477e831a4618dfab4136f5446b42a9f"
+    },
+    {
+      "path": "scripts/ci/android-emulator-validation.sh",
+      "bytes": 11642,
+      "sha256": "580b1723ae34429bb22cb59309c22c4cb38d60be722f167bc3053d5a783781f0"
+    },
+    {
+      "path": "scripts/interop/FakeMcpServer.java",
+      "bytes": 908,
+      "sha256": "7a3ce796d3438e4428fee4c414409fc3fc648eed2f486991d32fc9e7a82acdaa"
+    },
+    {
+      "path": "scripts/interop/requirements-lock.txt",
+      "bytes": 519,
+      "sha256": "282f64b04eb033b4c31676b90db28811e441a68d2b833a43230a4d4427f9383f"
+    },
+    {
+      "path": "scripts/interop/requirements.txt",
+      "bytes": 86,
+      "sha256": "bba18b271799d643797e7d44ec1317a85008c2389292d181e1104af1df069327"
+    },
+    {
+      "path": "scripts/interop/run_device_interop.sh",
+      "bytes": 4012,
+      "sha256": "d268c3216d9f8854670f6a0432b801780f22960fa8c56ef940cb0a5c3024e1b2"
+    },
+    {
+      "path": "scripts/interop/run_interop.py",
+      "bytes": 7737,
+      "sha256": "8c2d1c102bbaf8df7b7068e41e342ded967a6aca2a69b1e0a4754afe8566c836"
+    },
+    {
+      "path": "scripts/interop/sdk_client.py",
+      "bytes": 9734,
+      "sha256": "39cc713d3715cd8b2e8b1c9514ef99fd9a99f12c76fd31004ca53a3be827803a"
+    },
+    {
+      "path": "scripts/interop/test_sdk_client.py",
+      "bytes": 9345,
+      "sha256": "cb34e73d693cf66b2e613bf95581ecd97a5037028a880686d91c94268401dc90"
+    },
+    {
+      "path": "scripts/mcp_smoke.py",
+      "bytes": 2344,
+      "sha256": "91aaa9126442e8d04007dd17940ba7f602b8b8eb8b157a6cdab1e06fa6709a49"
+    },
+    {
+      "path": "scripts/tests/test_token_input.py",
+      "bytes": 2630,
+      "sha256": "47c560c9d3a1c0845bec32f0d0bedbdc0ad50c91d9577270cb0bff442d3911ef"
+    },
+    {
+      "path": "scripts/token_input.py",
+      "bytes": 468,
+      "sha256": "8a576b8ea410ff8537dfe1dfbf4ba5d5974e107dac1a5e6664b9e68efdafd005"
+    },
+    {
+      "path": "settings.gradle.kts",
+      "bytes": 300,
+      "sha256": "d978d22305f45b729575722ff8841990b598ec94e8fefd1b09f3e9aa9b8a5464"
+    },
+    {
+      "path": "tools/mcp_probe.py",
+      "bytes": 10202,
+      "sha256": "9a3d7082a1c060711235473f825d8e2a930009fde667076fa303e5f8d12690f5"
+    },
+    {
+      "path": "tools/tests/test_mcp_probe.py",
+      "bytes": 11483,
+      "sha256": "6e6ac8fa129cc0d0ad626d877db5e4d51c80eac0e5631f9272faa763502134d7"
+    }
+  ]
+}

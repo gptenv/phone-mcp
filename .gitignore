@@ -6,28 +6,16 @@ local.properties
 .idea/
 *.iml
 
-# Added by SWE before first commit: Android/Gradle and secret hygiene
-*.apk
-*.aab
-*.ap_
-*.dex
-*.class
-captures/
-.externalNativeBuild/
-.cxx/
-*.hprof
-*.log
-!docs/**/*.log
-keystore.properties
-signing.properties
-*.p12
-*.pem
-*.key
-.env
-.env.*
-google-services.json
-.DS_Store
-.vscode/
+# Private development evidence and machine-local state
+docs/verification/
+review-material/
+proposals/
 __pycache__/
 *.pyc
-.pytest_cache/
+.env
+.env.*
+.venv/
+*.log
+*.hprof
+*.apk
+*.aab

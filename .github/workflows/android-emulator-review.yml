@@ -1,0 +1,111 @@
+# REVIEWABLE DRAFT: never dispatched or used to authorize spending.
+name: Android emulator validation (manual review required)
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_repository:
+        description: 'Reviewed owner/repository; enter gptenv/phone-mcp after review'
+        required: true
+        default: 'UNREVIEWED'
+        type: string
+      reviewed_commit:
+        description: 'Exact reviewed 40-character commit SHA; must equal dispatched ref SHA'
+        required: true
+        default: 'UNREVIEWED'
+        type: string
+      reviewed_visibility:
+        description: 'Repository visibility checked against billing policy'
+        required: true
+        default: 'UNREVIEWED'
+        type: choice
+        options: ['UNREVIEWED', 'public', 'private']
+      setup_and_licenses_reviewed:
+        description: 'Owner approved JDK/SDK setup and existing applicable SDK licenses'
+        required: true
+        default: false
+        type: boolean
+      execution_and_budget_approved:
+        description: 'Owner explicitly approved this single run and reviewed billing'
+        required: true
+        default: false
+        type: boolean
+      no_paid_overage_guard_reviewed:
+        description: 'Owner verified applicable stop-usage/no-paid-overage controls outside this workflow'
+        required: true
+        default: false
+        type: boolean
+      install_missing_sdk:
+        description: 'Allow missing official SDK packages only; never accept licenses automatically'
+        required: true
+        default: false
+        type: boolean
+      api_level:
+        description: 'Exactly one fresh x86_64 emulator; API36 exercises multi-label behavior'
+        required: true
+        default: '35'
+        type: choice
+        options: ['35', '36']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phone-mcp-manual-emulator-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    env:
+      EXPECTED_REPOSITORY: ${{ inputs.expected_repository }}
+      REVIEWED_COMMIT: ${{ inputs.reviewed_commit }}
+      REVIEWED_VISIBILITY: ${{ inputs.reviewed_visibility }}
+      ACTUAL_VISIBILITY: ${{ github.event.repository.visibility }}
+      SETUP_AND_LICENSES_REVIEWED: ${{ inputs.setup_and_licenses_reviewed }}
+      EXECUTION_AND_BUDGET_APPROVED: ${{ inputs.execution_and_budget_approved }}
+      NO_PAID_OVERAGE_GUARD_REVIEWED: ${{ inputs.no_paid_overage_guard_reviewed }}
+      INSTALL_MISSING_SDK: ${{ inputs.install_missing_sdk }}
+      API_LEVEL: ${{ inputs.api_level }}
+    steps:
+      - name: Refuse unreviewed execution before checkout or setup
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]]
+          [[ "$SETUP_AND_LICENSES_REVIEWED" == true ]]
+          [[ "$EXECUTION_AND_BUDGET_APPROVED" == true ]]
+          [[ "$NO_PAID_OVERAGE_GUARD_REVIEWED" == true ]]
+          [[ "$EXPECTED_REPOSITORY" == "$GITHUB_REPOSITORY" ]]
+          [[ "$REVIEWED_COMMIT" =~ ^[0-9a-f]{40}$ && "$REVIEWED_COMMIT" == "$GITHUB_SHA" ]]
+          [[ "$REVIEWED_VISIBILITY" == public || "$REVIEWED_VISIBILITY" == private ]]
+          [[ "$REVIEWED_VISIBILITY" == "$ACTUAL_VISIBILITY" ]]
+          [[ "$RUNNER_ENVIRONMENT" == github-hosted && "$RUNNER_OS" == Linux && "$RUNNER_ARCH" == X64 ]]
+          [[ -c /dev/kvm && -r /dev/kvm && -w /dev/kvm ]] || {
+            echo 'KVM is not already accessible. Refusing permission changes and software-CPU fallback.' >&2
+            exit 1
+          }
+          echo 'Human acknowledgments are not a billing guarantee; no billing settings were changed.'
+      - name: Checkout the exact reviewed commit without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1; official release commit
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          submodules: false
+          lfs: false
+          fetch-depth: 1
+      - name: Official Eclipse Temurin JDK (no dependency/JDK cache upload)
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0; official release commit
+        with:
+          distribution: temurin
+          java-version: '21'
+          architecture: x64
+          check-latest: false
+          verify-signature: true
+          cache-jdk: false
+          overwrite-settings: false
+          settings-path: ${{ runner.temp }}/phone-mcp-unused-maven-settings
+      - name: Bounded local build, fixture smoke, then device suite
+        shell: bash
+        run: timeout --signal=TERM --kill-after=30s 2400s bash scripts/ci/android-emulator-validation.sh

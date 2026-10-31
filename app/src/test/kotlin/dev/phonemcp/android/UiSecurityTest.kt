@@ -177,6 +177,8 @@ class UiSecurityTest {
         assertEquals(activity.getString(R.string.notifications_required_title), shadowOf(dialog).title.toString())
         press(dialog, AlertDialog.BUTTON_NEGATIVE)
         activity.onRequestPermissionsResult(1, arrayOf(Manifest.permission.POST_NOTIFICATIONS), intArrayOf(PackageManager.PERMISSION_GRANTED))
+        assertEquals("Notifications granted. Press Start to begin a new session.",
+            org.robolectric.shadows.ShadowToast.getTextOfLatestToast())
         assertFalse(PhoneBridge.active); assertTrue(PhoneBridge.scopes.isEmpty())
         assertNull(shadowOf(activity).nextStartedService)
     }

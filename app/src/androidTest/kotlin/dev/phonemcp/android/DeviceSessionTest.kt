@@ -91,7 +91,7 @@ class DeviceSessionTest {
             Thread.sleep(200)
             scenario.onActivity { it.startForegroundService(Intent(it, McpService::class.java).setAction("dev.phonemcp.START").putExtra("activation", PhoneBridge.requestActivation(emptySet()))) }
             awaitState(true)
-            assertNotEquals(first, PhoneBridge.token)
+            assertTrue("Restart must rotate the token", first != PhoneBridge.token)
             assertTrue(rpc(first).startsWith("HTTP/1.1 401"))
             assertTrue(rpc(PhoneBridge.token!!).startsWith("HTTP/1.1 200"))
         }

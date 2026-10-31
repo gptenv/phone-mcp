@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dev.phonemcp.android.EditableFingerprintTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-31T02:52:23" hostname="c264e0dadc6e" time="4.494">
-  <properties/>
-  <testcase name="safeMetadataChangesInvalidateIdentityButValueChangesDoNot[28]" classname="dev.phonemcp.android.EditableFingerprintTest" time="1.765"/>
-  <testcase name="safeMetadataChangesInvalidateIdentityButValueChangesDoNot" classname="dev.phonemcp.android.EditableFingerprintTest" time="2.728"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

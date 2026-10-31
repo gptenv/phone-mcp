@@ -261,7 +261,7 @@ class PhoneAccessibilityService : AccessibilityService() {
         return nodeAction(id, action, null, authorize)
     }
     fun setText(id: String, text: String, authorize: () -> Unit): JSONObject {
-        if (text.length > 1000) { invalidateSnapshot(); error("INVALID_ARGUMENT: text exceeds 1000 characters") }
+        if (!dev.phonemcp.core.TextInputPolicy.accepts(text)) { invalidateSnapshot(); error("INVALID_ARGUMENT: text must contain at most 1000 Unicode code points and no unpaired surrogates") }
         val arguments = Bundle().apply { putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, text) }
         return nodeAction(id, AccessibilityNodeInfo.ACTION_SET_TEXT, arguments, authorize)
     }
