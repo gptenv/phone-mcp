@@ -1,0 +1,110 @@
+--- a/core/src/main/java/dev/phonemcp/core/McpDispatcher.java
++++ b/core/src/main/java/dev/phonemcp/core/McpDispatcher.java
+@@ -58,7 +58,7 @@
+             case "node_scroll": return a.length() == 2 && validNodeId(a) && a.opt("direction") instanceof String
+                 && Arrays.asList("forward", "backward").contains(a.optString("direction"));
+             case "node_set_text": return a.length() == 2 && validNodeId(a) && a.opt("text") instanceof String
+-                && a.optString("text").length() <= 1000; // Java String.length counts UTF-16 code units; empty clears.
++                && TextInputPolicy.accepts(a.optString("text")); // Shared Unicode-code-point policy; empty clears.
+             case "global_action": return a.length() == 1 && a.opt("action") instanceof String && Arrays.asList("back", "home", "recents").contains(a.optString("action"));
+             default: return false;
+         }
+@@ -93,8 +93,8 @@
+             .put(tool("node_scroll", "Scroll a fresh inspected scrollable node forward or backward. Requires screen.read and screen.act, unlocked device and current nodeId. No coordinates. Password/credential/data-sensitive controls are blocked; custom mislabelling can evade detection.",
+                 new JSONObject().put("nodeId", nodeIdSchema()).put("direction", new JSONObject().put("type", "string").put("enum", new JSONArray().put("forward").put("backward"))),
+                 new JSONArray().put("nodeId").put("direction"), false))
+-            .put(tool("node_set_text", "Replace text only in a fresh inspected eligible non-sensitive editable field. Requires screen.read and screen.act and unlocked device. Password/credential/data-sensitive controls are blocked; custom mislabelling can evade detection. At most 1000 UTF-16 code units; empty text clears. No submit action, payload echo or logging; the target app may react to text changes.",
+-                new JSONObject().put("nodeId", nodeIdSchema()).put("text", new JSONObject().put("type", "string").put("maxLength", 1000).put("description", "Non-sensitive replacement text; maximum 1000 UTF-16 code units, including surrogate pairs as two units. Empty string clears the field.")),
++            .put(tool("node_set_text", "Replace text only in a fresh inspected eligible non-sensitive editable field. Requires screen.read and screen.act and unlocked device. Password/credential/data-sensitive controls are blocked; custom mislabelling can evade detection. At most 1000 Unicode code points with no unpaired surrogates; empty text clears. No submit action, payload echo or logging; the target app may react to text changes.",
++                new JSONObject().put("nodeId", nodeIdSchema()).put("text", new JSONObject().put("type", "string").put("maxLength", 1000).put("description", "Non-sensitive replacement text; maximum 1000 Unicode code points. A valid surrogate pair counts as one point; unpaired surrogates are rejected. Empty string clears the field.")),
+                 new JSONArray().put("nodeId").put("text"), false))
+             .put(tool("global_action", "Navigate back, home or recents. Requires screen.act and unlocked device.", new JSONObject().put("action", new JSONObject().put("type", "string").put("enum", new JSONArray().put("back").put("home").put("recents"))), new JSONArray().put("action"), false));
+     }
+--- a/core/src/test/java/dev/phonemcp/core/McpTest.java
++++ b/core/src/test/java/dev/phonemcp/core/McpTest.java
+@@ -160,8 +160,8 @@
+         JSONObject hidden=throwing.dispatch(request("tools/call").put("params",new JSONObject().put("name","node_set_text").put("arguments",new JSONObject().put("nodeId","1:1").put("text",marker))));
+         assertTrue(hidden.getJSONObject("result").getBoolean("isError")); assertFalse(hidden.toString().contains(marker));
+     }
+-    @Test public void textLimitCountsUtf16UnitsAndNewSchemasAreClosed() {
+-        StringBuilder astral = new StringBuilder(); for(int i=0;i<500;i++) astral.append("😀");
++    @Test public void textLimitCountsUnicodeCodePointsAndNewSchemasAreClosed() {
++        StringBuilder astral = new StringBuilder(); for(int i=0;i<1000;i++) astral.append("😀");
+         JSONObject args=new JSONObject().put("nodeId","1:1").put("text",astral.toString());
+         assertTrue(McpDispatcher.validArgs("node_set_text",args));
+         assertFalse(McpDispatcher.validArgs("node_set_text",args.put("text",astral+"x")));
+--- /dev/null
++++ b/core/src/main/java/dev/phonemcp/core/TextInputPolicy.java
+@@ -0,0 +1,22 @@
++package dev.phonemcp.core;
++
++/** Shared wire/direct-Android limit: valid Unicode, at most 1000 code points.
++ * Does not normalize, truncate, retain or log supplied text. Empty text clears.
++ */
++public final class TextInputPolicy {
++    public static final int MAX_CODE_POINTS = 1000;
++    public static final int MAX_UTF16_CODE_UNITS = MAX_CODE_POINTS * 2;
++    private TextInputPolicy() { }
++    public static boolean accepts(String text) {
++        if (text == null || text.length() > MAX_UTF16_CODE_UNITS) return false;
++        int points = 0;
++        for (int i = 0; i < text.length(); i++) {
++            char c = text.charAt(i);
++            if (Character.isHighSurrogate(c)) {
++                if (++i >= text.length() || !Character.isLowSurrogate(text.charAt(i))) return false;
++            } else if (Character.isLowSurrogate(c)) return false;
++            if (++points > MAX_CODE_POINTS) return false;
++        }
++        return true;
++    }
++}
+--- /dev/null
++++ b/core/src/test/java/dev/phonemcp/core/TextInputPolicyTest.java
+@@ -0,0 +1,47 @@
++package dev.phonemcp.core;
++import org.json.JSONObject;
++import org.junit.Test;
++import static org.junit.Assert.*;
++import java.util.concurrent.atomic.AtomicInteger;
++
++public class TextInputPolicyTest {
++    private static String repeat(String text, int count) {
++        StringBuilder result = new StringBuilder();
++        for (int i = 0; i < count; i++) result.append(text);
++        return result.toString();
++    }
++    @Test public void asciiEmojiAndMixedBoundariesMatchCodePoints() {
++        assertTrue(TextInputPolicy.accepts("")); assertFalse(TextInputPolicy.accepts(null));
++        assertTrue(TextInputPolicy.accepts(repeat("a",1000)));
++        assertFalse(TextInputPolicy.accepts(repeat("a",1001)));
++        assertTrue(TextInputPolicy.accepts(repeat("😀",1000)));
++        assertFalse(TextInputPolicy.accepts(repeat("😀",1001)));
++        String mixed = repeat("😀",500) + repeat("a",500);
++        assertTrue(TextInputPolicy.accepts(mixed)); assertFalse(TextInputPolicy.accepts(mixed+"a"));
++        assertTrue(TextInputPolicy.accepts(repeat("a",999)+"😀")); // Pair spans UTF-16 indices 999/1000, one point.
++        assertFalse(TextInputPolicy.accepts(repeat("a",1000)+"😀"));
++        assertTrue(TextInputPolicy.accepts(repeat("\u0301",1000))); // Code points, not grapheme count.
++        assertFalse(TextInputPolicy.accepts(repeat("\u0301",1001)));
++        assertTrue(TextInputPolicy.accepts(repeat("a\u0301",500))); // 500 graphemes, 1000 code points.
++        assertFalse(TextInputPolicy.accepts(repeat("a",2001))); // Immediate UTF-16 preflight bound.
++    }
++    @Test public void rejectsUnpairedSurrogatesWithoutNormalizing() {
++        for (String text : new String[]{"\ud800", "\udc00", "x\ud800", "\ud800x", "x\ud800y", "\udc00x", "x\udc00", "x\udc00y", "\ud800\ud800", "\udc00\ud800"})
++            assertFalse(TextInputPolicy.accepts(text));
++        assertTrue(TextInputPolicy.accepts("\ud800\udc00"));
++        assertTrue(TextInputPolicy.accepts("é")); assertTrue(TextInputPolicy.accepts("e\u0301"));
++    }
++    @Test public void dispatcherUsesSamePolicyAndRejectsWithoutPayloadEcho() {
++        AtomicInteger executed = new AtomicInteger();
++        McpDispatcher dispatcher = new McpDispatcher((name,args)->{executed.incrementAndGet();return new JSONObject().put("accepted",true);});
++        for (String invalid : new String[]{"DO_NOT_ECHO\ud800", "DO_NOT_ECHO\udc00", "DO_NOT_ECHO" + repeat("😀",1000)}) {
++            JSONObject request = new JSONObject().put("jsonrpc","2.0").put("id",1).put("method","tools/call")
++                .put("params",new JSONObject().put("name","node_set_text").put("arguments",new JSONObject().put("nodeId","1:1").put("text",invalid)));
++            JSONObject response = dispatcher.dispatch(request);
++            assertEquals(-32602,response.getJSONObject("error").getInt("code"));
++            assertFalse(response.toString().contains("DO_NOT_ECHO"));
++        }
++        assertEquals(0,executed.get());
++        assertTrue(McpDispatcher.validArgs("node_set_text",new JSONObject().put("nodeId","1:1").put("text",repeat("😀",1000))));
++    }
++}

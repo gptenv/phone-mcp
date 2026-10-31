@@ -1,0 +1,216 @@
+{
+  "timestamp_utc": "2026-10-31T02:34:33.312601+00:00",
+  "sdk": "mcp",
+  "sdk_version": "2.3.0",
+  "controller": "host-only-fake; no Android/device",
+  "result": "PASS",
+  "scenarios": [
+    {
+      "mode": "auto",
+      "negotiated": "2025-06-18",
+      "result": "PASS",
+      "tools": [
+        "global_action",
+        "node_click",
+        "phone_status",
+        "screen_inspect"
+      ],
+      "sdk_events": [
+        {
+          "http_method": "POST",
+          "rpc_method": "server/discover",
+          "proposed_version": null,
+          "protocol_header": "2026-07-28",
+          "status": 400
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "initialize",
+          "proposed_version": "2025-11-25",
+          "protocol_header": null,
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "notifications/initialized",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 202
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/list",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/call",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/call",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 200
+        }
+      ],
+      "explicit_get_probe": 405,
+      "sdk_get_observed": false
+    },
+    {
+      "mode": "legacy",
+      "negotiated": "2025-06-18",
+      "result": "PASS",
+      "tools": [
+        "global_action",
+        "node_click",
+        "phone_status",
+        "screen_inspect"
+      ],
+      "sdk_events": [
+        {
+          "http_method": "POST",
+          "rpc_method": "initialize",
+          "proposed_version": "2025-11-25",
+          "protocol_header": null,
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "notifications/initialized",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 202
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/list",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/call",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/call",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 200
+        }
+      ],
+      "explicit_get_probe": 405,
+      "sdk_get_observed": false
+    },
+    {
+      "mode": "2025-06-18",
+      "negotiated": "2025-06-18",
+      "result": "PASS",
+      "tools": [
+        "global_action",
+        "node_click",
+        "phone_status",
+        "screen_inspect"
+      ],
+      "sdk_events": [
+        {
+          "http_method": "POST",
+          "rpc_method": "initialize",
+          "proposed_version": "2025-06-18",
+          "protocol_header": null,
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "notifications/initialized",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 202
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/list",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/call",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/call",
+          "proposed_version": null,
+          "protocol_header": "2025-06-18",
+          "status": 200
+        }
+      ],
+      "explicit_get_probe": 405,
+      "sdk_get_observed": false
+    },
+    {
+      "mode": "2025-03-26",
+      "negotiated": "2025-03-26",
+      "result": "PASS",
+      "tools": [
+        "global_action",
+        "node_click",
+        "phone_status",
+        "screen_inspect"
+      ],
+      "sdk_events": [
+        {
+          "http_method": "POST",
+          "rpc_method": "initialize",
+          "proposed_version": "2025-03-26",
+          "protocol_header": null,
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "notifications/initialized",
+          "proposed_version": null,
+          "protocol_header": "2025-03-26",
+          "status": 202
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/list",
+          "proposed_version": null,
+          "protocol_header": "2025-03-26",
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/call",
+          "proposed_version": null,
+          "protocol_header": "2025-03-26",
+          "status": 200
+        },
+        {
+          "http_method": "POST",
+          "rpc_method": "tools/call",
+          "proposed_version": null,
+          "protocol_header": "2025-03-26",
+          "status": 200
+        }
+      ],
+      "explicit_get_probe": 405,
+      "sdk_get_observed": false
+    }
+  ]
+}

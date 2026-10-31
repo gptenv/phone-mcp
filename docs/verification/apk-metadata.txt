@@ -1,0 +1,22 @@
+package: name='dev.phonemcp.android' versionCode='2' versionName='0.1.1' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
+sdkVersion:'26'
+targetSdkVersion:'35'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.FOREGROUND_SERVICE'
+uses-permission: name='android.permission.FOREGROUND_SERVICE_SPECIAL_USE'
+uses-permission: name='android.permission.POST_NOTIFICATIONS'
+application-label:'Phone MCP'
+application-icon-160:'res/drawable/ic_phone_mcp.xml'
+application: label='Phone MCP' icon='res/drawable/ic_phone_mcp.xml'
+application-debuggable
+launchable-activity: name='dev.phonemcp.android.MainActivity'  label='' icon=''
+feature-group: label=''
+  uses-feature: name='android.hardware.faketouch'
+  uses-implied-feature: name='android.hardware.faketouch' reason='default feature for all apps'
+provides-component:'accessibility'
+main
+other-services
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--'
+densities: '160'

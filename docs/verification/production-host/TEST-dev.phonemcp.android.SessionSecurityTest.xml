@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.phonemcp.android.SessionSecurityTest" tests="39" skipped="0" failures="0" errors="0" timestamp="2026-10-31T02:52:28" hostname="c264e0dadc6e" time="2.066">
+  <properties/>
+  <testcase name="notificationLossImmediatelyRevokesOnAuthorization[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.888"/>
+  <testcase name="notificationLossImmediatelyRevokesOnAuthorization[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.085"/>
+  <testcase name="notificationLossImmediatelyRevokesOnAuthorization" classname="dev.phonemcp.android.SessionSecurityTest" time="0.118"/>
+  <testcase name="delayedOldFailureDoesNotRevokeNewAuthority[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.026"/>
+  <testcase name="delayedOldFailureDoesNotRevokeNewAuthority[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.022"/>
+  <testcase name="delayedOldFailureDoesNotRevokeNewAuthority" classname="dev.phonemcp.android.SessionSecurityTest" time="0.023"/>
+  <testcase name="oldServerCannotAdoptNewSessionTokenOrScopes[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.029"/>
+  <testcase name="oldServerCannotAdoptNewSessionTokenOrScopes[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.023"/>
+  <testcase name="oldServerCannotAdoptNewSessionTokenOrScopes" classname="dev.phonemcp.android.SessionSecurityTest" time="0.022"/>
+  <testcase name="lockAndScreenOffGateScreenAccessButNotStatus[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.025"/>
+  <testcase name="lockAndScreenOffGateScreenAccessButNotStatus[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.032"/>
+  <testcase name="lockAndScreenOffGateScreenAccessButNotStatus" classname="dev.phonemcp.android.SessionSecurityTest" time="0.046"/>
+  <testcase name="unavailableNotificationsRefuseStart[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.03"/>
+  <testcase name="unavailableNotificationsRefuseStart[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.027"/>
+  <testcase name="unavailableNotificationsRefuseStart" classname="dev.phonemcp.android.SessionSecurityTest" time="0.027"/>
+  <testcase name="bindFailureDoesNotPublishAuthority[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.073"/>
+  <testcase name="bindFailureDoesNotPublishAuthority[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.059"/>
+  <testcase name="bindFailureDoesNotPublishAuthority" classname="dev.phonemcp.android.SessionSecurityTest" time="0.052"/>
+  <testcase name="notificationStopRevokesBeforeDestruction[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.026"/>
+  <testcase name="notificationStopRevokesBeforeDestruction[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.023"/>
+  <testcase name="notificationStopRevokesBeforeDestruction" classname="dev.phonemcp.android.SessionSecurityTest" time="0.023"/>
+  <testcase name="statusRequiresActiveSession[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.02"/>
+  <testcase name="statusRequiresActiveSession[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.019"/>
+  <testcase name="statusRequiresActiveSession" classname="dev.phonemcp.android.SessionSecurityTest" time="0.018"/>
+  <testcase name="scopesAndAccessibilityAreCheckedBeforeActions[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.018"/>
+  <testcase name="scopesAndAccessibilityAreCheckedBeforeActions[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.019"/>
+  <testcase name="scopesAndAccessibilityAreCheckedBeforeActions" classname="dev.phonemcp.android.SessionSecurityTest" time="0.021"/>
+  <testcase name="stopDisposesRetainedScreenSnapshot[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.026"/>
+  <testcase name="stopDisposesRetainedScreenSnapshot[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.022"/>
+  <testcase name="stopDisposesRetainedScreenSnapshot" classname="dev.phonemcp.android.SessionSecurityTest" time="0.024"/>
+  <testcase name="destructionRevokesEverything[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.022"/>
+  <testcase name="destructionRevokesEverything[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.025"/>
+  <testcase name="destructionRevokesEverything" classname="dev.phonemcp.android.SessionSecurityTest" time="0.025"/>
+  <testcase name="stopInvalidatesQueuedActivationWithoutCancellingNewerGrant[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.021"/>
+  <testcase name="stopInvalidatesQueuedActivationWithoutCancellingNewerGrant[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.02"/>
+  <testcase name="stopInvalidatesQueuedActivationWithoutCancellingNewerGrant" classname="dev.phonemcp.android.SessionSecurityTest" time="0.017"/>
+  <testcase name="nullOrUnknownStartDoesNotReactivate[26]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.024"/>
+  <testcase name="nullOrUnknownStartDoesNotReactivate[28]" classname="dev.phonemcp.android.SessionSecurityTest" time="0.018"/>
+  <testcase name="nullOrUnknownStartDoesNotReactivate" classname="dev.phonemcp.android.SessionSecurityTest" time="0.016"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

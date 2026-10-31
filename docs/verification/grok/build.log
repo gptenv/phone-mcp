@@ -1,0 +1,76 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :app
+Unable to initialize metrics, ensure <home>/.android is writable, details: <home>/.android/analytics.settings (No such file or directory)
+
+> Task :core:compileJava UP-TO-DATE
+> Task :core:processResources NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac NO-SOURCE
+> Task :app:bundleDebugClassesToRuntimeJar UP-TO-DATE
+> Task :app:bundleDebugClassesToCompileJar UP-TO-DATE
+
+> Task :app:compileDebugUnitTestKotlin
+w: file://<workspace>/phone-mcp/app/src/test/kotlin/dev/phonemcp/android/SessionSecurityTest.kt:34:70 'fun setIsInteractive(p0: Boolean): Unit' is deprecated. Deprecated in Java.
+w: file://<workspace>/phone-mcp/app/src/test/kotlin/dev/phonemcp/android/SessionSecurityTest.kt:60:70 'fun setIsInteractive(p0: Boolean): Unit' is deprecated. Deprecated in Java.
+w: file://<workspace>/phone-mcp/app/src/test/kotlin/dev/phonemcp/android/UiSecurityTest.kt:74:40 Java type mismatch: inferred type is 'kotlin.Any?', but 'kotlin.Any' was expected.
+
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:packageDebugUnitTestForUnitTest UP-TO-DATE
+> Task :app:generateDebugUnitTestConfig UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+
+> Task :app:testDebugUnitTest
+
+OldInstanceDestroyTicketDiagnostic > oldInstanceDestroyDoesNotEraseNewPendingTicket[26] FAILED
+    java.lang.AssertionError at OldInstanceDestroyTicketDiagnostic.kt:25
+
+OldInstanceDestroyTicketDiagnostic > oldInstanceDestroyDoesNotEraseNewPendingTicket[28] FAILED
+    java.lang.AssertionError at OldInstanceDestroyTicketDiagnostic.kt:25
+
+OldInstanceDestroyTicketDiagnostic > oldInstanceDestroyDoesNotEraseNewPendingTicket FAILED
+    java.lang.AssertionError at OldInstanceDestroyTicketDiagnostic.kt:25
+
+6 tests completed, 3 failed
+
+> Task :app:testDebugUnitTest FAILED
+w: Detected multiple Kotlin daemon sessions at 
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:testDebugUnitTest'.
+> There were failing tests. See the report at: file://<workspace>/phone-mcp/app/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 25s
+28 actionable tasks: 2 executed, 26 up-to-date

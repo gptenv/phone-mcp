@@ -1,0 +1,6 @@
+Queued tool expire=true calls=[A, C] B=closed
+Run 1: tests=1 failures=0 ms=5357
+Queued tool expire=true calls=[A, C] B=closed
+Run 2: tests=1 failures=0 ms=5311
+Queued tool expire=true calls=[A, C] B=closed
+Run 3: tests=1 failures=0 ms=5310

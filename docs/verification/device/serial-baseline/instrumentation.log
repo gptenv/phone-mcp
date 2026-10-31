@@ -1,0 +1,309 @@
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+dev.phonemcp.android.DeviceAccessibilityTest:
+INSTRUMENTATION_STATUS: test=ownTokenScreenIsNeverExposed
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=ownTokenScreenIsNeverExposed
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=wrongNodeTypesAndEditableClicksAreRejected
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture$default(DeviceAccessibilityTest.kt:159)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected$nodes(DeviceAccessibilityTest.kt:250)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected(DeviceAccessibilityTest.kt:253)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 38 more
+
+INSTRUMENTATION_STATUS: stream=
+Error in wrongNodeTypesAndEditableClicksAreRejected(dev.phonemcp.android.DeviceAccessibilityTest):
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture$default(DeviceAccessibilityTest.kt:159)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected$nodes(DeviceAccessibilityTest.kt:250)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected(DeviceAccessibilityTest.kt:253)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 38 more
+
+INSTRUMENTATION_STATUS: test=wrongNodeTypesAndEditableClicksAreRejected
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=oneStepScrollUsesFreshHandlesAndCanReverse
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.oneStepScrollUsesFreshHandlesAndCanReverse(DeviceAccessibilityTest.kt:272)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP scroll top
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+
+INSTRUMENTATION_STATUS: stream=
+Error in oneStepScrollUsesFreshHandlesAndCanReverse(dev.phonemcp.android.DeviceAccessibilityTest):
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.oneStepScrollUsesFreshHandlesAndCanReverse(DeviceAccessibilityTest.kt:272)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP scroll top
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+
+INSTRUMENTATION_STATUS: test=oneStepScrollUsesFreshHandlesAndCanReverse
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=realReadOnlySessionCannotClickOrNavigate
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.realReadOnlySessionCannotClickOrNavigate(DeviceAccessibilityTest.kt:207)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP public fixture label
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+
+INSTRUMENTATION_STATUS: stream=
+Error in realReadOnlySessionCannotClickOrNavigate(dev.phonemcp.android.DeviceAccessibilityTest):
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.realReadOnlySessionCannotClickOrNavigate(DeviceAccessibilityTest.kt:207)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP public fixture label
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+
+INSTRUMENTATION_STATUS: test=realReadOnlySessionCannotClickOrNavigate
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle(DeviceAccessibilityTest.kt:187)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP public fixture label
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+
+INSTRUMENTATION_STATUS: stream=
+Error in realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle(dev.phonemcp.android.DeviceAccessibilityTest):
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle(DeviceAccessibilityTest.kt:187)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP public fixture label
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+
+INSTRUMENTATION_STATUS: test=realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=nonSensitiveTextReplacementAndClearNeverExposeEditableValues
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.nonSensitiveTextReplacementAndClearNeverExposeEditableValues(DeviceAccessibilityTest.kt:233)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP public fixture label
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+
+INSTRUMENTATION_STATUS: stream=
+Error in nonSensitiveTextReplacementAndClearNeverExposeEditableValues(dev.phonemcp.android.DeviceAccessibilityTest):
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.nonSensitiveTextReplacementAndClearNeverExposeEditableValues(DeviceAccessibilityTest.kt:233)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP public fixture label
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+
+INSTRUMENTATION_STATUS: test=nonSensitiveTextReplacementAndClearNeverExposeEditableValues
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+dev.phonemcp.android.DeviceSessionTest:
+INSTRUMENTATION_STATUS: test=localStartStopRotationAndActualHttpAuthentication
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=localStartStopRotationAndActualHttpAuthentication
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=notificationDeleteIntentRevokesSession
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stack=java.util.NoSuchElementException: Array contains no element matching the predicate.
+	at dev.phonemcp.android.DeviceSessionTest.notificationDeleteIntentRevokesSession(DeviceSessionTest.kt:103)
+
+INSTRUMENTATION_STATUS: stream=
+Error in notificationDeleteIntentRevokesSession(dev.phonemcp.android.DeviceSessionTest):
+java.util.NoSuchElementException: Array contains no element matching the predicate.
+	at dev.phonemcp.android.DeviceSessionTest.notificationDeleteIntentRevokesSession(DeviceSessionTest.kt:103)
+
+INSTRUMENTATION_STATUS: test=notificationDeleteIntentRevokesSession
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=secureUiAndRevokedSessionStayInactiveAfterRecreation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=secureUiAndRevokedSessionStayInactiveAfterRecreation
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 428.706
+There were 6 failures:
+1) wrongNodeTypesAndEditableClicksAreRejected(dev.phonemcp.android.DeviceAccessibilityTest)
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture$default(DeviceAccessibilityTest.kt:159)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected$nodes(DeviceAccessibilityTest.kt:250)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected(DeviceAccessibilityTest.kt:253)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 38 more
+2) oneStepScrollUsesFreshHandlesAndCanReverse(dev.phonemcp.android.DeviceAccessibilityTest)
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.oneStepScrollUsesFreshHandlesAndCanReverse(DeviceAccessibilityTest.kt:272)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP scroll top
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+3) realReadOnlySessionCannotClickOrNavigate(dev.phonemcp.android.DeviceAccessibilityTest)
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.realReadOnlySessionCannotClickOrNavigate(DeviceAccessibilityTest.kt:207)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP public fixture label
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+4) realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle(dev.phonemcp.android.DeviceAccessibilityTest)
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle(DeviceAccessibilityTest.kt:187)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP public fixture label
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+5) nonSensitiveTextReplacementAndClearNeverExposeEditableValues(dev.phonemcp.android.DeviceAccessibilityTest)
+java.lang.AssertionError: Fixture not readable: error=PROTECTED_SCREEN: This app or system screen is not exposed; package=; active=true; accessibility=true
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:170)
+	at dev.phonemcp.android.DeviceAccessibilityTest.nonSensitiveTextReplacementAndClearNeverExposeEditableValues(DeviceAccessibilityTest.kt:233)
+	... 34 trimmed
+Caused by: java.lang.AssertionError: Timed out waiting for fixture accessibility tree containing MCP public fixture label
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:93)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:162)
+	... 36 more
+6) notificationDeleteIntentRevokesSession(dev.phonemcp.android.DeviceSessionTest)
+java.util.NoSuchElementException: Array contains no element matching the predicate.
+	at dev.phonemcp.android.DeviceSessionTest.notificationDeleteIntentRevokesSession(DeviceSessionTest.kt:103)
+
+FAILURES!!!
+Tests run: 9,  Failures: 6
+
+
+INSTRUMENTATION_CODE: -1

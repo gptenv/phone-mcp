@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "2026-10-31T03:08:04.088404+00:00",
+  "sdk": "mcp",
+  "sdk_version": "2.3.0",
+  "label": "api35-emulator-stopped",
+  "target": "caller-supplied local endpoint; device identity supplied by caller",
+  "device_certification": false,
+  "stopped_observation": "RemoteProtocolError",
+  "result": "PASS"
+}

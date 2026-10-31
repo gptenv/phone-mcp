@@ -1,0 +1,6 @@
+API35 dedicated software emulator diagnostic; no personal device
+Android/sdk_phone64_x86_64/emu64x:15/AE3A.240806.019/12368160:userdebug/test-keys
+35
+Accessibility settings observed after first harness cleanup (command-quoting defect was source-derived, not proven by this snapshot):
+null
+0

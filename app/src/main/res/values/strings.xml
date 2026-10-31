@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Phone MCP</string>
+    <string name="accessibility_description">Only during a session you explicitly start, Phone MCP lets a client holding your session token read visible screen labels and click visible controls, scroll one step, replace non-sensitive editable text, or navigate back/home/recents, according to your chosen scopes. Screen data may contain personal information. Editable values are never read back. Known credential fields, protected system screens, and locked-device access are excluded; custom labels can defeat sensitivity detection. Actions may affect other apps. No cloud connection is included. Stop anytime in Phone MCP or its notification.</string>
+
+    <string name="tagline">Your phone. Your session.</string>
+    <string name="intro">Local developer preview • no cloud connection\nOnly an authorized client with your temporary token can use enabled tools. Phone MCP cannot unlock your phone or grant itself permissions.</string>
+    <string name="stopped">Stopped</string>
+    <string name="screen_access_heading">1. Enable screen access</string>
+    <string name="screen_disclosure">Android Accessibility access can expose personal screen content and operate controls. Phone MCP uses it only in a session you start, with the scopes below. Editable values are redacted and known credential fields and protected system screens are blocked, but custom controls and ordinary labels can still contain sensitive data. Never connect an untrusted client.</string>
+    <string name="review_accessibility">Review Accessibility permission</string>
+    <string name="accessibility_consent_title">Allow screen access?</string>
+    <string name="cancel">Cancel</string>
+    <string name="open_settings">Open Android settings</string>
+    <string name="scopes_heading">2. Choose this session\'s scopes</string>
+    <string name="scope_read">Read visible screen labels (screen.read)</string>
+    <string name="scope_act">Click, scroll, edit non-sensitive text, and navigate (screen.act)</string>
+    <string name="scopes_help">Scopes default off. Clicks, scrolling, and text replacement require both scopes; navigation requires screen.act. Change scopes only after stopping. Click targets expire when the screen changes. This is not unrestricted phone control.</string>
+    <string name="start_local">Start local session</string>
+    <string name="notifications_granted">Allow notifications, then press Start again</string>
+    <string name="accessibility_required">Enable Phone MCP in Accessibility settings first</string>
+    <string name="start_consent_title">Start a phone-control session?</string>
+    <string name="start_consent_body">Anyone holding this session token can use the selected scopes until you stop. Action scope permits clicks, one-step scrolling, non-sensitive text replacement, and navigation, which may affect other apps. Use only with a trusted local client. No remote permission changes are allowed.</string>
+    <string name="start_confirm">Start session</string>
+    <string name="stop_revoke">Stop and revoke token</string>
+    <string name="connect_heading">3. Connect locally</string>
+    <string name="connect_help">Forward the phone\'s loopback port with adb (see README). The endpoint is not exposed to Wi-Fi. The temporary token below is shown only on this device and changes each session.</string>
+    <string name="starting">Starting local endpoint…</string>
+    <string name="start_failed">Could not start. No session was authorized; try again from this screen.</string>
+    <string name="stopped_revoked">Stopped; token revoked</string>
+    <string name="session_status">%1$s • %2$s\nAccessibility: %3$s</string>
+    <string name="active_label">ACTIVE</string>
+    <string name="stopped_label">STOPPED</string>
+    <string name="accessibility_connected">connected</string>
+    <string name="accessibility_not_enabled">not enabled</string>
+    <string name="bearer_token" translatable="false">Bearer %1$s</string>
+    <string name="no_token">No active token</string>
+    <string name="settings_unavailable">Android settings could not be opened. Open them manually to review permissions.</string>
+    <string name="notifications_required_title">Visible session notification required</string>
+    <string name="notifications_required_body">Phone MCP requires notifications so you can see and stop an active session. No session has started. Enable notifications in Android settings, then return and press Start again.</string>
+    <string name="accessibility_service_label">Phone MCP screen access</string>
+</resources>

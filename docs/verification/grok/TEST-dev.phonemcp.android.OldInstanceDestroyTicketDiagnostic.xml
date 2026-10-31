@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic" tests="6" skipped="0" failures="3" errors="0" timestamp="2026-10-31T02:51:53" hostname="c264e0dadc6e" time="6.019">
+  <properties/>
+  <testcase name="explicitRevokeInvalidatesCurrentTicket[26]" classname="dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic" time="1.756"/>
+  <testcase name="explicitRevokeInvalidatesCurrentTicket[28]" classname="dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic" time="1.108"/>
+  <testcase name="explicitRevokeInvalidatesCurrentTicket" classname="dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic" time="2.986"/>
+  <testcase name="oldInstanceDestroyDoesNotEraseNewPendingTicket[26]" classname="dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic" time="0.059">
+    <failure message="java.lang.AssertionError: Teardown should preserve a newer grant expected:&lt;<synthetic-ticket-redacted>&gt; but was:&lt;null&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Teardown should preserve a newer grant expected:&lt;<synthetic-ticket-redacted>&gt; but was:&lt;null&gt;
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic.oldInstanceDestroyDoesNotEraseNewPendingTicket(OldInstanceDestroyTicketDiagnostic.kt:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.robolectric.RobolectricTestRunner$HelperTestRunner$1.evaluate(RobolectricTestRunner.java:502)
+	at org.robolectric.internal.SandboxTestRunner$2.lambda$evaluate$2(SandboxTestRunner.java:285)
+	at org.robolectric.internal.bytecode.Sandbox.lambda$runOnMainThread$0(Sandbox.java:104)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</failure>
+  </testcase>
+  <testcase name="oldInstanceDestroyDoesNotEraseNewPendingTicket[28]" classname="dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic" time="0.053">
+    <failure message="java.lang.AssertionError: Teardown should preserve a newer grant expected:&lt;<synthetic-ticket-redacted>&gt; but was:&lt;null&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Teardown should preserve a newer grant expected:&lt;<synthetic-ticket-redacted>&gt; but was:&lt;null&gt;
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic.oldInstanceDestroyDoesNotEraseNewPendingTicket(OldInstanceDestroyTicketDiagnostic.kt:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.robolectric.RobolectricTestRunner$HelperTestRunner$1.evaluate(RobolectricTestRunner.java:502)
+	at org.robolectric.internal.SandboxTestRunner$2.lambda$evaluate$2(SandboxTestRunner.java:285)
+	at org.robolectric.internal.bytecode.Sandbox.lambda$runOnMainThread$0(Sandbox.java:104)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</failure>
+  </testcase>
+  <testcase name="oldInstanceDestroyDoesNotEraseNewPendingTicket" classname="dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic" time="0.056">
+    <failure message="java.lang.AssertionError: Teardown should preserve a newer grant expected:&lt;<synthetic-ticket-redacted>&gt; but was:&lt;null&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Teardown should preserve a newer grant expected:&lt;<synthetic-ticket-redacted>&gt; but was:&lt;null&gt;
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at dev.phonemcp.android.OldInstanceDestroyTicketDiagnostic.oldInstanceDestroyDoesNotEraseNewPendingTicket(OldInstanceDestroyTicketDiagnostic.kt:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.robolectric.RobolectricTestRunner$HelperTestRunner$1.evaluate(RobolectricTestRunner.java:502)
+	at org.robolectric.internal.SandboxTestRunner$2.lambda$evaluate$2(SandboxTestRunner.java:285)
+	at org.robolectric.internal.bytecode.Sandbox.lambda$runOnMainThread$0(Sandbox.java:104)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

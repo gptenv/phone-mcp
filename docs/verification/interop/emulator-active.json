@@ -1,0 +1,101 @@
+{
+  "timestamp_utc": "2026-10-31T03:07:57.512611+00:00",
+  "sdk": "mcp",
+  "sdk_version": "2.3.0",
+  "label": "api35-emulator-active",
+  "target": "caller-supplied local endpoint; device identity supplied by caller",
+  "device_certification": false,
+  "invalid_token_status": 401,
+  "explicit_get_status": 405,
+  "result": "PASS",
+  "sessions": [
+    {
+      "connection": 1,
+      "negotiated": "2025-06-18",
+      "tool_names": [
+        "global_action",
+        "node_click",
+        "node_scroll",
+        "node_set_text",
+        "phone_status",
+        "screen_inspect"
+      ],
+      "phone_status_active": true
+    },
+    {
+      "connection": 2,
+      "negotiated": "2025-06-18",
+      "tool_names": [
+        "global_action",
+        "node_click",
+        "node_scroll",
+        "node_set_text",
+        "phone_status",
+        "screen_inspect"
+      ],
+      "phone_status_active": true
+    }
+  ],
+  "sdk_events": [
+    {
+      "http_method": "POST",
+      "rpc_method": "server/discover",
+      "protocol_header": "2026-07-28",
+      "status": 400
+    },
+    {
+      "http_method": "POST",
+      "rpc_method": "initialize",
+      "protocol_header": null,
+      "status": 200
+    },
+    {
+      "http_method": "POST",
+      "rpc_method": "notifications/initialized",
+      "protocol_header": "2025-06-18",
+      "status": 202
+    },
+    {
+      "http_method": "POST",
+      "rpc_method": "tools/list",
+      "protocol_header": "2025-06-18",
+      "status": 200
+    },
+    {
+      "http_method": "POST",
+      "rpc_method": "tools/call",
+      "protocol_header": "2025-06-18",
+      "status": 200
+    },
+    {
+      "http_method": "POST",
+      "rpc_method": "server/discover",
+      "protocol_header": "2026-07-28",
+      "status": 400
+    },
+    {
+      "http_method": "POST",
+      "rpc_method": "initialize",
+      "protocol_header": null,
+      "status": 200
+    },
+    {
+      "http_method": "POST",
+      "rpc_method": "notifications/initialized",
+      "protocol_header": "2025-06-18",
+      "status": 202
+    },
+    {
+      "http_method": "POST",
+      "rpc_method": "tools/list",
+      "protocol_header": "2025-06-18",
+      "status": 200
+    },
+    {
+      "http_method": "POST",
+      "rpc_method": "tools/call",
+      "protocol_header": "2025-06-18",
+      "status": 200
+    }
+  ]
+}

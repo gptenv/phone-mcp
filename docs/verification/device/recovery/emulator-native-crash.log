@@ -1,0 +1,233 @@
+INFO         | Android emulator version 37.2.13.0 (build_id 16740729) (CL:N/A)
+INFO         | Graphics backend: gfxstream
+INFO         | Found systemPath <workspace>/.phone-mcp-tools/sdk/system-images/android-35/default/x86_64/
+INFO         | Saving last run QEMU version for the AVD to 2
+INFO         | Increasing RAM size to 2560MB
+##############################################################################
+##                        WARNING - ACTION REQUIRED                         ##
+##  Consider using the '-metrics-collection' flag to help improve the       ##
+##  emulator by sending anonymized usage data. Or use the '-no-metrics'     ##
+##  flag to bypass this warning and turn off the metrics collection.        ##
+##  In a future release this warning will turn into a one-time blocking     ##
+##  prompt to ask for explicit user input regarding metrics collection.     ##
+##                                                                          ##
+##  Please see '-help-metrics-collection' for more details. You can use     ##
+##  '-metrics-to-file' or '-metrics-to-console' flags to see what type of   ##
+##  data is being collected by emulator as part of usage statistics.        ##
+##############################################################################
+INFO         | Guest GLES Driver: Auto (ext controls)
+INFO         | emuglConfig_init: vulkan_mode_selected:swiftshader gles_mode_selected:swiftshader
+INFO         | Checking system compatibility:
+INFO         |   Checking: hasSufficientDiskSpace
+INFO         |      Ok: Disk space requirements to run avd: `phone_mcp_test35` are met
+INFO         |   Checking: hasSufficientHwGpu
+INFO         |      Ok: Hardware GPU compatibility checks are not required
+INFO         |   Checking: hasSufficientSystem
+WARNING      | Downloaded protobuf file is corrupt.
+INFO         |      Ok: System requirements to run avd: `phone_mcp_test35` are met
+WARNING      | File System is not ext4, disable QuickbootFileBacked feature
+WARNING      | x86_64 emulation may not work without hardware acceleration!
+INFO         | Storing crashdata in: /tmp/android-unknown/emu-crash-37.2.13.db, detection is enabled for process: 66
+INFO         | Initializing gfxstream backend
+INFO         | startOpenglesRendererImpl: gpu info
+INFO         | 
+INFO         | initIcdPaths: ICD set to 'swiftshader', using Swiftshader ICD
+INFO         | Setting ICD filenames for the loader = <workspace>/.phone-mcp-tools/sdk/emulator/lib64/vulkan/vk_swiftshader_icd.json
+INFO         | SharedLibrary::open for [<workspace>/.phone-mcp-tools/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so]
+INFO         | SharedLibrary::open for [<workspace>/.phone-mcp-tools/sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so.1]
+INFO         | SharedLibrary::open for [<workspace>/.phone-mcp-tools/sdk/emulator/lib64/vulkan/libvulkan.so]
+INFO         | Added library: <workspace>/.phone-mcp-tools/sdk/emulator/lib64/vulkan/libvulkan.so
+INFO         | Selecting Vulkan device: SwiftShader Device (Subzero), Version: 1.3.0
+INFO         | Using Vulkan externalMemoryMode: OpaqueFd for VkEmulation
+INFO         | Format VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16 does not support YCbCr sampler conversion
+INFO         | SharedLibrary::open for [libX11]
+WARNING      | Could not open libX11.so, try libX11.so.6
+INFO         | SharedLibrary::open for [libX11.so.6]
+INFO         | SharedLibrary::open for [libX11-xcb]
+WARNING      | Could not open libX11-xcb.so, try libX11-xcb.so.1
+INFO         | SharedLibrary::open for [libX11-xcb.so.1]
+INFO         | Initializing VkEmulation features:
+INFO         |     glInteropSupported: false
+INFO         |     useDeferredCommands: true
+INFO         |     createResourceWithRequirements: true
+INFO         |     useVulkanComposition: false
+INFO         |     useVulkanNativeSwapchain: false
+INFO         |     enable guestRenderDoc: false
+INFO         |     ASTC LDR emulation mode: Gpu
+INFO         |     enable ETC2 emulation: true
+INFO         |     enable Ycbcr emulation: false
+INFO         |     guestVulkanOnly: false
+INFO         |     useDedicatedAllocations: false
+INFO         |     guestVulkanMaxApiVersion: 1.3.0
+INFO         |     enableProtectedMemoryEmulation: false
+INFO         | Graphics Adapter Vendor Google (Google Inc.)
+INFO         | Graphics Adapter Android Emulator OpenGL ES Translator (Google SwiftShader)
+INFO         | Graphics API Version OpenGL ES 3.0 (OpenGL ES 3.0 SwiftShader 4.0.0.1)
+INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_standard_derivatives GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 
+INFO         | Graphics Device Extensions N/A
+INFO         | Disabling sparse binding feature support
+INFO         | Sending adb public key [QAAAAFcJE72ZDUoztrrhmG+udZYhgsZoeba323bNySRLzhJ6Vwl2GvEKg+G0v7+CkfbhsJPK4xmtorPUeYEp3fw9Us6lvcaTtFGkOP7C3OS7s1C+igzmpTKSbhqPPtOmxZqlfRNXQeAiBiTyaUWJjsQVwLOIT4tUgyi1fGnsenN2FForQD9FcQtTwmCOLAWn7EdqdFRplPmqpltOVnE0HYszOlzCToQBBYUossdEY8BV8KRUa7YLzhd5lNNsiENGzEBxJG8xy4ERLNbqv3rHIAiVsel6GMQVSSwXfveTn/edOp4HQ/x5tFnIcfwbttRlwFJv2FuM4LULAQr3Yd2SUycQ2DiR3JSqSU7PlGLVZ9jajU+6bNW6UcpHUVoOVJ2mB5YOQGGJc3XkMwHvQXydM5a1a5T/H/el70OR9PAuNrzmNg83eBcc5rAVQqXNp0jzgNhKJyAuf/SCOgmCXBQ4LaS8otM3USk9JciRutzpX6R4KgGMp/uyHKujRnxiYxnlMCwAquBhD1p1exJB63LKv/lRwMpS8lDLuabN2LHlWAPsYko1sc6Fmk40Iw9pgNOrLyTg0BX8UkvEPrTRYalpFhXyq3IjCJh/GZGW9VfoG8wqhkwTPIkl9O5UfUe/YsJ4Cc8ymI9pnrs6iwgxirslYSVsV+RHrkqWDRZUWlyhQOxviAj6NYxUOQEAAQA= @unknown]
+INFO         | Userspace boot properties:
+INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
+INFO         |   androidboot.dalvik.vm.heapsize=576m
+INFO         |   androidboot.debug.hwui.renderer=skiagl
+INFO         |   androidboot.debug.sf.nobootanimation=1
+INFO         |   androidboot.hardware=ranchu
+INFO         |   androidboot.hardware.gltransport=pipe
+INFO         |   androidboot.hardware.vulkan=ranchu
+INFO         |   androidboot.logcat=*:V
+INFO         |   androidboot.opengles.version=196608
+INFO         |   androidboot.qemu=1
+INFO         |   androidboot.qemu.adb.pubkey=QAAAAFcJE72ZDUoztrrhmG+udZYhgsZoeba323bNySRLzhJ6Vwl2GvEKg+G0v7+CkfbhsJPK4xmtorPUeYEp3fw9Us6lvcaTtFGkOP7C3OS7s1C+igzmpTKSbhqPPtOmxZqlfRNXQeAiBiTyaUWJjsQVwLOIT4tUgyi1fGnsenN2FForQD9FcQtTwmCOLAWn7EdqdFRplPmqpltOVnE0HYszOlzCToQBBYUossdEY8BV8KRUa7YLzhd5lNNsiENGzEBxJG8xy4ERLNbqv3rHIAiVsel6GMQVSSwXfveTn/edOp4HQ/x5tFnIcfwbttRlwFJv2FuM4LULAQr3Yd2SUycQ2DiR3JSqSU7PlGLVZ9jajU+6bNW6UcpHUVoOVJ2mB5YOQGGJc3XkMwHvQXydM5a1a5T/H/el70OR9PAuNrzmNg83eBcc5rAVQqXNp0jzgNhKJyAuf/SCOgmCXBQ4LaS8otM3USk9JciRutzpX6R4KgGMp/uyHKujRnxiYxnlMCwAquBhD1p1exJB63LKv/lRwMpS8lDLuabN2LHlWAPsYko1sc6Fmk40Iw9pgNOrLyTg0BX8UkvEPrTRYalpFhXyq3IjCJh/GZGW9VfoG8wqhkwTPIkl9O5UfUe/YsJ4Cc8ymI9pnrs6iwgxirslYSVsV+RHrkqWDRZUWlyhQOxviAj6NYxUOQEAAQA= @unknown
+INFO         |   androidboot.qemu.avd_name=phone_mcp_test35
+INFO         |   androidboot.qemu.camera_hq_edge_processing=0
+INFO         |   androidboot.qemu.camera_protocol_ver=1
+INFO         |   androidboot.qemu.cpuvulkan.version=4206592
+INFO         |   androidboot.qemu.gltransport.drawFlushInterval=800
+INFO         |   androidboot.qemu.gltransport.name=pipe
+INFO         |   androidboot.qemu.hwcodec.avcdec=2
+INFO         |   androidboot.qemu.hwcodec.hevcdec=2
+INFO         |   androidboot.qemu.hwcodec.vpxdec=2
+INFO         |   androidboot.qemu.settings.system.screen_off_timeout=2147483647
+INFO         |   androidboot.qemu.skin=320x640
+INFO         |   androidboot.qemu.virtiowifi=1
+INFO         |   androidboot.qemu.vsync=60
+INFO         |   androidboot.serialno=EMULATOR37X2X13X0
+INFO         |   androidboot.vbmeta.digest=602b0c809848f3be570a96601071931225108ec3b3739d99a1dc41db38efe83c
+INFO         |   androidboot.vbmeta.hash_alg=sha256
+INFO         |   androidboot.vbmeta.size=6720
+INFO         |   androidboot.veritymode=enforcing
+TCG doesn't support requested feature: CPUID.01H:ECX.avx [bit 28]
+TCG doesn't support requested feature: CPUID.01H:ECX.f16c [bit 29]
+TCG doesn't support requested feature: CPUID.01H:ECX.avx [bit 28]
+TCG doesn't support requested feature: CPUID.01H:ECX.f16c [bit 29]
+WARNING: cannnot unmap ptr 0x7f72baa01000 as it is in the protected range from 0x7f721aa00000 to 0x7f72bac00000
+INFO         | Monitoring duration of emulator setup.
+WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
+INFO         | Using security allow list from: <workspace>/.phone-mcp-tools/sdk/emulator/lib/emulator_access.json
+INFO         | The active JSON Web Key Sets can be found here: <workspace>/.phone-mcp-tools/runtime/avd/running/66/jwks/<synthetic-ticket-redacted>/active.jwk
+INFO         | Scanning <workspace>/.phone-mcp-tools/runtime/avd/running/66/jwks/<synthetic-ticket-redacted> for jwk keys.
+INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
+INFO         | Advertising in: <workspace>/.phone-mcp-tools/runtime/avd/running/pid_66.ini
+INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Successfully initialized netsim WiFi
+INFO         | Setting display: 0 configuration to: 320x640, dpi: 160x160 
+INFO         | setDisplayActiveConfig: id:0, 320x640
+INFO         | emulatorSetupEnvironment: Environment scene is not required
+USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
+WARNING      | Failed to process .ini file <workspace>/.phone-mcp-tools/emulator-home/.android/emu-update-last-check.ini for reading.
+WARNING      | UpdateCheck: Failure: Error
+WARNING      | UpdateCheck: failed to get the latest version, skipping check (current version '37.2.13-16740729')
+INFO         | Boot completed in 453355 ms
+INFO         | Increasing screen off timeout, logcat buffer size to 2M.
+ERROR        | Failed to find ColorBuffer: 76
+ERROR        | Failed to bind to texture: invalid color buffer.
+ERROR        | Failed to find ColorBuffer: 168
+ERROR        | Failed to bind to texture: invalid color buffer.
+ERROR        | detected a hanging thread 'QEMU2 main loop'. No response for 17523 ms
+ERROR        | detected a hanging thread 'QEMU2 CPU0 thread'. No response for 19983 ms
+ERROR        | detected a hanging thread 'QEMU2 main loop'. No response for 20095 ms
+[74:74:20261030,225045.258780:ERROR scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+[74:74:20261030,225045.260038:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260054:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260059:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260062:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260066:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260070:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260074:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260077:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260081:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260084:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260087:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260091:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260095:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260103:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260107:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260110:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260113:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260116:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260119:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260122:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260125:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260129:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260132:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260135:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260139:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260142:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260145:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260148:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260151:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260155:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260158:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260161:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260164:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260167:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260170:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260173:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260176:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260180:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260185:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260188:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260192:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260196:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260199:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260203:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260207:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260211:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260214:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260218:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260222:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260225:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260229:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260233:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260236:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260241:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260244:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260251:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260255:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260259:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260263:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260267:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260271:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260275:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260278:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260282:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260286:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260290:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260294:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260297:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260301:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260305:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260309:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260314:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260317:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260321:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260325:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260329:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260333:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260337:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260341:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260345:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260349:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260352:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260356:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260359:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260363:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260367:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260370:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260374:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260378:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260382:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260385:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260389:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260393:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260396:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260399:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260403:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260406:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260413:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260416:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260419:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260423:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260426:ERROR exception_handler_server.cc:143] tgkill: No such process (3)
+[74:74:20261030,225045.260429:ERROR exception_handler_server.cc:143] tgkill: No such process (3)

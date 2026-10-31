@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.phonemcp.core.McpTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2026-10-31T02:39:12" hostname="c264e0dadc6e" time="20.788">
+  <properties/>
+  <testcase name="strictJsonRejectsExtensionsDuplicatesAndDeepInput" classname="dev.phonemcp.core.McpTest" time="0.01"/>
+  <testcase name="initializeAndTools" classname="dev.phonemcp.core.McpTest" time="0.007"/>
+  <testcase name="fixedPortRapidRestartRotatesTokensAndNeverSharesActiveListener" classname="dev.phonemcp.core.McpTest" time="0.041"/>
+  <testcase name="unsolicitedResponseInputsAreHttpErrorsWithoutEffects" classname="dev.phonemcp.core.McpTest" time="0.014"/>
+  <testcase name="unknownMethodsAndInvalidArgumentsNeverReachController" classname="dev.phonemcp.core.McpTest" time="0.001"/>
+  <testcase name="oversizedToolResultsAreWithheldWithoutLargeSerializedCopy" classname="dev.phonemcp.core.McpTest" time="0.025"/>
+  <testcase name="transportNotificationsParseErrorsAndToolCalls" classname="dev.phonemcp.core.McpTest" time="0.004"/>
+  <testcase name="queuedAuthenticatedToolBeforeDeadlineExecutes" classname="dev.phonemcp.core.McpTest" time="0.113"/>
+  <testcase name="toolErrorsAreNotProtocolErrors" classname="dev.phonemcp.core.McpTest" time="0.001"/>
+  <testcase name="multipleLegacyToolCallsAreRejectedAtomicallyButSingleCallBatchWorks" classname="dev.phonemcp.core.McpTest" time="0.005"/>
+  <testcase name="notificationsDoNotExecuteTools" classname="dev.phonemcp.core.McpTest" time="0.001"/>
+  <testcase name="textLimitCountsUtf16UnitsAndNewSchemasAreClosed" classname="dev.phonemcp.core.McpTest" time="0.001"/>
+  <testcase name="acceptedSocketConfigurationFailureAndCloseRaceNeverLeak" classname="dev.phonemcp.core.McpTest" time="0.054"/>
+  <testcase name="unexpectedListenerFailureNotifiesOnceAfterCleanupAndDoesNotAffectReplacement" classname="dev.phonemcp.core.McpTest" time="0.01"/>
+  <testcase name="stalledResponseWriterIsClosedAndWorkerRecovers" classname="dev.phonemcp.core.McpTest" time="5.038"/>
+  <testcase name="transportAuthenticationOriginAndVersion" classname="dev.phonemcp.core.McpTest" time="0.004"/>
+  <testcase name="boundedJsonHandlesUtf8EscapesDepthCyclesAndNodeCount" classname="dev.phonemcp.core.McpTest" time="0.008"/>
+  <testcase name="completedWritesCancelDeadlinesAndIntentionalCloseNeverNotifies" classname="dev.phonemcp.core.McpTest" time="0.122"/>
+  <testcase name="trickleHeadersHaveAbsoluteDeadline" classname="dev.phonemcp.core.McpTest" time="5.004"/>
+  <testcase name="expiredQueuedAuthenticatedToolNeverExecutesAndFreshToolRecovers" classname="dev.phonemcp.core.McpTest" time="5.31"/>
+  <testcase name="oldProtocolBatchesAndNewProtocolRejection" classname="dev.phonemcp.core.McpTest" time="0.003"/>
+  <testcase name="scrollAndTextValidateStrictArgumentsWithoutEchoOrEffects" classname="dev.phonemcp.core.McpTest" time="0.001"/>
+  <testcase name="queuedConnectionsDoNotReceiveAFreshReadDeadline" classname="dev.phonemcp.core.McpTest" time="5.005"/>
+  <testcase name="transportRejectsAmbiguousFramingAndOversize" classname="dev.phonemcp.core.McpTest" time="0.004"/>
+  <system-out><![CDATA[Fixed-port rapid restart: 5 rotations, old token401/new token200, competing listener refused
+Queued tool expire=false calls=[A, B, C] B=HTTP/1.1 200 OK
+Bounded response regression JVM max heap bytes=67108864
+Queued tool expire=true calls=[A, C] B=closed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

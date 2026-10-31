@@ -1,0 +1,77 @@
+--------- beginning of main
+10-30 22:54:22.306   339   339 D AndroidRuntime: >>>>>> START com.android.internal.os.ZygoteInit uid 0 <<<<<<
+10-30 22:54:23.433   339   339 I AndroidRuntime: Using default boot image
+10-30 22:54:23.433   339   339 I AndroidRuntime: Leaving lock profiling enabled
+10-30 22:55:52.463   833   833 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+--------- beginning of system
+10-30 22:56:32.488   560   607 D AccessibilityManagerService: Ignoring non-encryption-aware service ComponentInfo{com.android.systemui.accessibility.accessibilitymenu/com.android.systemui.accessibility.accessibilitymenu.AccessibilityMenuService}
+10-30 22:56:32.795   560   607 D AccessibilityManagerService: Ignoring non-encryption-aware service ComponentInfo{dev.phonemcp.android/dev.phonemcp.android.PhoneAccessibilityService}
+10-30 22:59:07.803  1646  1646 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-30 22:59:08.299  1646  1646 I AndroidRuntime: Using default boot image
+10-30 22:59:08.300  1646  1646 I AndroidRuntime: Leaving lock profiling enabled
+10-30 22:59:17.442  1646  1646 D AndroidRuntime: Calling main entry com.android.commands.am.Am
+10-30 22:59:49.959  1727  1727 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+10-30 22:59:50.465   560  1002 D AccessibilityManagerService: changeCurrentUserForTestAutomationIfNeededLocked(0): ignoring because device doesn't support visible background users
+10-30 23:00:52.017  2209  2209 D AndroidRuntime: Shutting down VM
+--------- beginning of crash
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: FATAL EXCEPTION: main
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: Process: dev.phonemcp.android.test, PID: 2209
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: java.lang.NoClassDefFoundError: Failed resolution of: Lkotlin/jvm/internal/Intrinsics;
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at dev.phonemcp.android.test.FixtureActivity.onCreate(FixtureActivity.kt:30)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:9002)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8980)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1526)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4030)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4235)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:112)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:174)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:109)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2636)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:317)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8705)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "kotlin.jvm.internal.Intrinsics" on path: DexPathList[[zip file "/data/app/~~KZQYFLFJC5Tt-7QF-yi6Cw==/dev.phonemcp.android.test-Rb1NpWU1k-OpLpfGBTUWyg==/base.apk"],nativeLibraryDirectories=[/data/app/~~KZQYFLFJC5Tt-7QF-yi6Cw==/dev.phonemcp.android.test-Rb1NpWU1k-OpLpfGBTUWyg==/lib/x86_64, /system/lib64, /system_ext/lib64]]
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+10-30 23:00:52.095  2209  2209 E AndroidRuntime: 	... 18 more
+10-30 23:01:40.631  2388  2388 D AndroidRuntime: Shutting down VM
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: FATAL EXCEPTION: main
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: Process: dev.phonemcp.android.test, PID: 2388
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: java.lang.NoClassDefFoundError: Failed resolution of: Lkotlin/jvm/internal/Intrinsics;
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at dev.phonemcp.android.test.FixtureActivity.onCreate(FixtureActivity.kt:30)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:9002)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8980)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1526)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4030)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4235)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:112)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:174)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:109)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2636)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:317)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8705)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "kotlin.jvm.internal.Intrinsics" on path: DexPathList[[zip file "/data/app/~~KZQYFLFJC5Tt-7QF-yi6Cw==/dev.phonemcp.android.test-Rb1NpWU1k-OpLpfGBTUWyg==/base.apk"],nativeLibraryDirectories=[/data/app/~~KZQYFLFJC5Tt-7QF-yi6Cw==/dev.phonemcp.android.test-Rb1NpWU1k-OpLpfGBTUWyg==/lib/x86_64, /system/lib64, /system_ext/lib64]]
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+10-30 23:01:40.679  2388  2388 E AndroidRuntime: 	... 18 more
+10-30 23:03:12.938  2681  2681 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+10-30 23:03:58.347   560  1308 D AccessibilityManagerService: restoreCurrentUserForTestAutomationIfNeededLocked(): ignoring because device doesn't support visible background users
+10-30 23:03:58.586   560   658 D AccessibilityManagerService: changeCurrentUserForTestAutomationIfNeededLocked(0): ignoring because device doesn't support visible background users
+10-30 23:04:40.054  3180  3180 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+10-30 23:06:00.609  3485  3485 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+10-30 23:06:25.363  3621  3621 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+10-30 23:06:57.587   560   591 D AccessibilityManagerService: restoreCurrentUserForTestAutomationIfNeededLocked(): ignoring because device doesn't support visible background users
+10-30 23:06:57.849  1646  1646 I AndroidRuntime: VM exiting with result code 0.

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.phonemcp.core.McpTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-31T01:57:58" hostname="c264e0dadc6e" time="15.488">
+  <properties/>
+  <testcase name="strictJsonRejectsExtensionsDuplicatesAndDeepInput" classname="dev.phonemcp.core.McpTest" time="0.008"/>
+  <testcase name="initializeAndTools" classname="dev.phonemcp.core.McpTest" time="0.004"/>
+  <testcase name="unknownMethodsAndInvalidArgumentsNeverReachController" classname="dev.phonemcp.core.McpTest" time="0.0"/>
+  <testcase name="transportNotificationsParseErrorsAndToolCalls" classname="dev.phonemcp.core.McpTest" time="0.026"/>
+  <testcase name="queuedAuthenticatedToolBeforeDeadlineExecutes" classname="dev.phonemcp.core.McpTest" time="0.115"/>
+  <testcase name="toolErrorsAreNotProtocolErrors" classname="dev.phonemcp.core.McpTest" time="0.0"/>
+  <testcase name="notificationsDoNotExecuteTools" classname="dev.phonemcp.core.McpTest" time="0.0"/>
+  <testcase name="transportAuthenticationOriginAndVersion" classname="dev.phonemcp.core.McpTest" time="0.004"/>
+  <testcase name="trickleHeadersHaveAbsoluteDeadline" classname="dev.phonemcp.core.McpTest" time="5.003"/>
+  <testcase name="expiredQueuedAuthenticatedToolNeverExecutesAndFreshToolRecovers" classname="dev.phonemcp.core.McpTest" time="5.307"/>
+  <testcase name="oldProtocolBatchesAndNewProtocolRejection" classname="dev.phonemcp.core.McpTest" time="0.006"/>
+  <testcase name="queuedConnectionsDoNotReceiveAFreshReadDeadline" classname="dev.phonemcp.core.McpTest" time="5.004"/>
+  <testcase name="transportRejectsAmbiguousFramingAndOversize" classname="dev.phonemcp.core.McpTest" time="0.008"/>
+  <system-out><![CDATA[Queued tool expire=false calls=[A, B, C] B=HTTP/1.1 200 OK
+Queued tool expire=true calls=[A, C] B=closed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

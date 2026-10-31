@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- No permissions, services, providers or receivers. Emulator test application only. -->
+    <application android:label="@string/fixture_app_name" android:testOnly="true"
+        android:allowBackup="false" android:fullBackupContent="false"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        <activity android:name=".FixtureActivity" android:exported="true" android:launchMode="singleTask" />
+    </application>
+</manifest>

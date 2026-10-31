@@ -1,0 +1,217 @@
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+Boot check elapsed=0 completed=
+Boot check elapsed=20 completed=
+Boot check elapsed=40 completed=
+Boot check elapsed=60 completed=
+Boot check elapsed=80 completed=
+Boot check elapsed=106 completed=
+Boot check elapsed=127 completed=
+Boot check elapsed=148 completed=
+Boot check elapsed=169 completed=
+Boot check elapsed=189 completed=
+Boot check elapsed=211 completed=
+Boot check elapsed=233 completed=
+Boot check elapsed=256 completed=
+Boot check elapsed=279 completed=
+Boot check elapsed=301 completed=
+Boot check elapsed=324 completed=
+Boot check elapsed=345 completed=
+Boot check elapsed=365 completed=
+Boot check elapsed=386 completed=
+Boot check elapsed=407 completed=
+Boot check elapsed=428 completed=
+Boot check elapsed=449 completed=1
+EMULATOR_BOOTED
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+dev.phonemcp.android.DeviceAccessibilityTest:
+INSTRUMENTATION_STATUS: test=ownTokenScreenIsNeverExposed
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Timed out waiting for Phone MCP accessibility connection
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:45)
+	at dev.phonemcp.android.DeviceAccessibilityTest.setup(DeviceAccessibilityTest.kt:69)
+
+INSTRUMENTATION_STATUS: stream=
+Error in ownTokenScreenIsNeverExposed(dev.phonemcp.android.DeviceAccessibilityTest):
+java.lang.AssertionError: Timed out waiting for Phone MCP accessibility connection
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:45)
+	at dev.phonemcp.android.DeviceAccessibilityTest.setup(DeviceAccessibilityTest.kt:69)
+
+INSTRUMENTATION_STATUS: test=ownTokenScreenIsNeverExposed
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=realReadOnlySessionCannotClickOrNavigate
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Timed out waiting for Phone MCP accessibility connection
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:45)
+	at dev.phonemcp.android.DeviceAccessibilityTest.setup(DeviceAccessibilityTest.kt:69)
+
+INSTRUMENTATION_STATUS: stream=
+Error in realReadOnlySessionCannotClickOrNavigate(dev.phonemcp.android.DeviceAccessibilityTest):
+java.lang.AssertionError: Timed out waiting for Phone MCP accessibility connection
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:45)
+	at dev.phonemcp.android.DeviceAccessibilityTest.setup(DeviceAccessibilityTest.kt:69)
+
+INSTRUMENTATION_STATUS: test=realReadOnlySessionCannotClickOrNavigate
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalStateException: Could not read emulator accessibility state
+	at dev.phonemcp.android.DeviceAccessibilityTest.setup(DeviceAccessibilityTest.kt:54)
+
+INSTRUMENTATION_STATUS: stream=
+Error in realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle(dev.phonemcp.android.DeviceAccessibilityTest):
+java.lang.IllegalStateException: Could not read emulator accessibility state
+	at dev.phonemcp.android.DeviceAccessibilityTest.setup(DeviceAccessibilityTest.kt:54)
+
+INSTRUMENTATION_STATUS: test=realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+dev.phonemcp.android.DeviceSessionTest:
+INSTRUMENTATION_STATUS: test=localStartStopRotationAndActualHttpAuthentication
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=localStartStopRotationAndActualHttpAuthentication
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=secureUiAndRevokedSessionStayInactiveAfterRecreation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceSessionTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=secureUiAndRevokedSessionStayInactiveAfterRecreation
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 177.122
+There were 3 failures:
+1) ownTokenScreenIsNeverExposed(dev.phonemcp.android.DeviceAccessibilityTest)
+java.lang.AssertionError: Timed out waiting for Phone MCP accessibility connection
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:45)
+	at dev.phonemcp.android.DeviceAccessibilityTest.setup(DeviceAccessibilityTest.kt:69)
+2) realReadOnlySessionCannotClickOrNavigate(dev.phonemcp.android.DeviceAccessibilityTest)
+java.lang.AssertionError: Timed out waiting for Phone MCP accessibility connection
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:45)
+	at dev.phonemcp.android.DeviceAccessibilityTest.setup(DeviceAccessibilityTest.kt:69)
+3) realTreeRedactsSecretsAndFreshClickInvalidatesOldHandle(dev.phonemcp.android.DeviceAccessibilityTest)
+java.lang.IllegalStateException: Could not read emulator accessibility state
+	at dev.phonemcp.android.DeviceAccessibilityTest.setup(DeviceAccessibilityTest.kt:54)
+
+FAILURES!!!
+Tests run: 5,  Failures: 3
+
+
+INSTRUMENTATION_CODE: -1
+EMULATOR_JOB_STARTED
+Deleted 0 rows
+DEDICATED_EMULATOR_TEST_SETTINGS_REPAIRED
+EMULATOR_JOB_FINISHED status=0
+EMULATOR_JOB_STARTED
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+dev.phonemcp.android.DeviceAccessibilityTest:
+INSTRUMENTATION_STATUS: test=ownTokenScreenIsNeverExposed
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=ownTokenScreenIsNeverExposed
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=wrongNodeTypesAndEditableClicksAreRejected
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Timed out waiting for fixture accessibility tree
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:60)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:128)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture$default(DeviceAccessibilityTest.kt:126)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected$nodes(DeviceAccessibilityTest.kt:205)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected(DeviceAccessibilityTest.kt:208)
+
+INSTRUMENTATION_STATUS: stream=
+Error in wrongNodeTypesAndEditableClicksAreRejected(dev.phonemcp.android.DeviceAccessibilityTest):
+java.lang.AssertionError: Timed out waiting for fixture accessibility tree
+	at org.junit.Assert.fail(Assert.java:89)
+	at dev.phonemcp.android.DeviceAccessibilityTest.waitUntil(DeviceAccessibilityTest.kt:60)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture(DeviceAccessibilityTest.kt:128)
+	at dev.phonemcp.android.DeviceAccessibilityTest.inspectFixture$default(DeviceAccessibilityTest.kt:126)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected$nodes(DeviceAccessibilityTest.kt:205)
+	at dev.phonemcp.android.DeviceAccessibilityTest.wrongNodeTypesAndEditableClicksAreRejected(DeviceAccessibilityTest.kt:208)
+
+INSTRUMENTATION_STATUS: test=wrongNodeTypesAndEditableClicksAreRejected
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.phonemcp.android.DeviceAccessibilityTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=9
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=oneStepScrollUsesFreshHandlesAndCanReverse
+INSTRUMENTATION_STATUS_CODE: 1
+.phone-mcp-tools/run-emulator-tests.sh: line 53:    66 Segmentation fault      "$TOOLS/sdk/emulator/emulator" -avd phone_mcp_test35 -accel off -gpu swiftshader_indirect -no-window -no-audio -no-snapshot -no-boot-anim -memory 2048 -cores 2 > "$TOOLS/emulator.log" 2>&1
+EMULATOR_JOB_FINISHED status=255

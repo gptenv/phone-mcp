@@ -1,0 +1,2 @@
+# Official Python SDK, pinned for reproducible host-only interoperability.
+mcp==2.3.0
